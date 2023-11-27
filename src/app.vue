@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+console.log(9);
+</script>
 
 <template>
   <div class="w-full h-full">
