@@ -36,6 +36,14 @@ definePageMeta({
   slogan: "天一亮時間就不屬於我了",
   headerBgUrl: index_bg,
 });
+useHead({
+  title: "copyman blog",
+  ogTitle: "我的神奇网站",
+  description: "这是我的神奇网站，让我来告诉你关于它的一切。",
+  ogDescription: "这是我的神奇网站，让我来告诉你关于它的一切。",
+  ogImage: "https://example.com/image.png",
+  twitterCard: "summary_large_image",
+});
 const viewport = useViewport();
 const current = ref(2);
 

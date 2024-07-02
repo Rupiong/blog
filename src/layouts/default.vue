@@ -39,7 +39,7 @@ const { stop } = useIntersectionObserver(
       <Content class="w-full">
         <div
           ref="headerBgRef"
-          class="relative w-full h-[680px] md:h-[480px] bg-[#ccc] flex flex-col justify-center items-center bg-cover bg-center overflow-hidden text-primary"
+          class="relative w-full h-[680px] md:h-[480px] bg-[#ccc] flex flex-col justify-center items-center overflow-hidden text-primary"
         >
           <div class="text-[38px] lg:text-[56px] font-bold z-10">
             {{ route.meta.title }}
@@ -54,7 +54,7 @@ const { stop } = useIntersectionObserver(
         </div>
         <div class="w-full mt-[-90px] z-10 flex justify-center">
           <ContentInner>
-            <div class="w-full bg-white rounded-md p-6 lg:p-16">
+            <div class="w-full bg-white lg:rounded-md p-6 lg:p-16">
               <slot />
             </div>
             <div

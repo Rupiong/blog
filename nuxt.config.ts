@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 require("dotenv").config();
-console.log(process.env.GLOB_API_URL, 666);
 export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: "src",

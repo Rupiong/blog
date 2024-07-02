@@ -21,16 +21,31 @@
           -- 他不过是泛黄没人理采的花朵。
         </div>
         <div class="flex items-center justify-between mt-2">
-          <div
-            class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
-          >
-            <Icon class="text-white" name="ic:baseline-wechat" />
-          </div>
-          <div
-            class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
-          >
-            <Icon class="text-white" name="fa6-brands:weibo" />
-          </div>
+          <APopover>
+            <template #content>
+              <div class="w-full flex justify-center">
+                <img
+                  class="w-40 object-cover"
+                  src="@/assets/images/common/wechat.jpg"
+                />
+              </div>
+            </template>
+            <div
+              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
+            >
+              <Icon class="text-white" name="ic:baseline-wechat" />
+            </div>
+          </APopover>
+          <APopover>
+            <template #content>
+              <div class="w-full h-40 bg-[#ccc]"></div>
+            </template>
+            <div
+              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
+            >
+              <Icon class="text-white" name="fa6-brands:weibo" />
+            </div>
+          </APopover>
           <NuxtLink to="https://github.com/Rupiong" target="_blank">
             <div
               class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
@@ -38,12 +53,16 @@
               <Icon class="text-white" name="akar-icons:github-fill" />
             </div>
           </NuxtLink>
-
-          <div
-            class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
-          >
-            <Icon class="text-white" name="cib:tencent-qq" />
-          </div>
+          <APopover>
+            <template #content>
+              <div class="w-full h-40 bg-[#ccc]"></div>
+            </template>
+            <div
+              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
+            >
+              <Icon class="text-white" name="material-symbols:mail-rounded" />
+            </div>
+          </APopover>
         </div>
       </div>
     </div>

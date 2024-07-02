@@ -113,4 +113,6 @@ const technologyList = [
   { name: "tailwindcss", icon: "logos:tailwindcss-icon" },
   { name: "React.js", icon: "logos:react" },
 ];
+
+const checked = ref(true);
 </script>
