@@ -1,0 +1,1 @@
+import{Y as t,Z as n,_ as r,p as s,$ as o}from"./BNBWDEh3.js";function a(a,e={}){const u=function(t){const a=t||n();return a?.ssrContext?.head||a?.runWithContext(()=>{if(r())return s(o)})}(e.nuxt);if(u)return t(a,{head:u,...e})}export{a as u};

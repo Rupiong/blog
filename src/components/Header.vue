@@ -70,7 +70,7 @@ const props = defineProps({
 const menuList = ref([
   { name: "关于我", url: "/about.html" },
   { name: "留言", url: "/message" },
-  { name: "赞助" },
+  { name: "赞助", url: "/sponsor.html" },
 ]);
 
 const showMenuPop = ref(false);

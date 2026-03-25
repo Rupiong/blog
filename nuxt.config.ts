@@ -48,6 +48,13 @@ export default defineNuxtConfig({
           },
         },
       },
+      sizes: ()=>{
+        let sizes = {};
+        for(let i = 16; i <= 100; i += 4){
+          sizes[i] = `${i}px`;
+        }
+        return sizes;
+      }
     },
   },
   plugins: ["@/plugins/useScroll"],
