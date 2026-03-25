@@ -4,7 +4,7 @@ console.log(9);
 
 <template>
   <div class="w-full h-full">
-    <NuxtLayout>
+    <NuxtLayout class="w-full h-full">
       <!--  在页面导航上显示进度条	-->
       <NuxtLoadingIndicator />
       <NuxtPage />

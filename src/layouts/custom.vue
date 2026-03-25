@@ -10,7 +10,7 @@ const viewport = useViewport();
       colorClass="text-black"
       :isFixed="false"
     />
-    <div class="flex justify-center">
+    <div class="w-full h-full overflow-y-auto flex flex-col items-start justify-start">
       <Content>
         <ContentInner>
           <slot />

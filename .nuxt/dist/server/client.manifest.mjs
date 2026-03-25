@@ -1,1 +1,4 @@
-export { default } from "file:///Users/huangyuping/Desktop/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/blog/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+
+import { viteNodeFetch } from "file:///Users/huangyuping/Desktop/rupiong/blog/node_modules/.pnpm/@nuxt+vite-builder@3.21.2_eslint@8.57.1_magicast@0.5.2_nuxt@3.21.2_@parcel+watcher@2.5._2e5d88204e6cb4fa22287b86b0a63694/node_modules/@nuxt/vite-builder/dist/vite-node.mjs"
+export default () => viteNodeFetch.getManifest()
+    

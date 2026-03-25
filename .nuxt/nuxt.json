@@ -1,9 +1,9 @@
 {
-  "_hash": "jFBPu97jL4",
+  "_hash": "AAJa15V3LdyGPdFBDuEqzXVH_BXTGlyn6dvZqVGAgKo",
   "project": {
-    "rootDir": "/Users/huangyuping/Desktop/个人项目/blog"
+    "rootDir": "/Users/huangyuping/Desktop/rupiong/blog"
   },
   "versions": {
-    "nuxt": "3.10.3"
+    "nuxt": "3.21.2"
   }
 }
