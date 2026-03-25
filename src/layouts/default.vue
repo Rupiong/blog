@@ -66,7 +66,7 @@ const { stop } = useIntersectionObserver(
           </ContentInner>
         </div>
       </Content>
-      <Footer v-if="viewport.isGreaterOrEquals('md')" class="mt-6" />
+      <!-- <Footer v-if="viewport.isGreaterOrEquals('md')" class="mt-6" /> -->
     </div>
   </div>
 </template>

@@ -1,8 +1,7 @@
 <template>
   <div
     ref="contentEl"
-    class="w-full h-full flex flex-col items-center gap-6"
-    :style="{ minHeight: windowHeight + 'px' }"
+    class="w-full flex-1 flex flex-col items-center gap-6"
   >
     <slot />
   </div>

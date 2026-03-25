@@ -26,7 +26,7 @@ useHead({
 </script>
 
 <template>
-  <div class="w-full h-full bg-white flex flex-col  md:mt-6">
+  <div class="w-full h-full bg-white flex flex-col  md:pt-6">
     <div class="w-full p-6 rounded-[6px]">
       <div class="flex items-start gap-4 border-b border-dashed pb-6">
         <div
