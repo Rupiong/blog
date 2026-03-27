@@ -18,40 +18,7 @@
 </template>
 <script setup lang="ts">
 import CommentReply from "./CommentReply.vue";
-const mockData = [
-  {
-    avatar: "",
-    nickname: "张三",
-    time: "2023-10-31",
-    isLike: true,
-    content: "666",
-    replyData: [
-      {
-        author: "张三",
-        avatar: "",
-        nickname: "张三",
-        time: "2023-10-31",
-        isLike: true,
-        content: "666",
-      },
-    ],
-  },
-  {
-    avatar: "",
-    nickname: "张三",
-    time: "2023-10-31",
-    isLike: false,
-    content: "666",
-    replyData: [
-      {
-        author: "张三",
-        avatar: "",
-        nickname: "张三",
-        time: "2023-10-31",
-        isLike: true,
-        content: "666",
-      },
-    ],
-  },
-];
+import { getMockCommentList } from "@/data/commentMock";
+
+const mockData = getMockCommentList();
 </script>
