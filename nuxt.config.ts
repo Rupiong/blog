@@ -62,7 +62,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/assets/styles/default.scss";',
+          additionalData: '@use "@/assets/styles/default.scss";',
         },
       },
     },
@@ -87,8 +87,8 @@ export default defineNuxtConfig({
   },
   devServer: {
     // 服务器配置
-    port: process.env.CLIENT_PORT,
-  },
+    port: process.env.CLIENT_PORT ? parseInt(process.env.CLIENT_PORT) : 3000,
+  },  
   app: {
     buildAssetsDir: "static",
     head: {
