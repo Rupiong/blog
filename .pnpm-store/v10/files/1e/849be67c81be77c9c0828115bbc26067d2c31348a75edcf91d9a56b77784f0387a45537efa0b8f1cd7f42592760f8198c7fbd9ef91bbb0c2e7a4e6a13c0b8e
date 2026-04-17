@@ -1,0 +1,4 @@
+import { type ComputedRef } from 'vue-demi';
+import type { ViewportManager, ViewportOptions } from './types.js';
+export declare function useViewport(): ViewportManager;
+export declare function useViewportOptions(): ComputedRef<ViewportOptions>;

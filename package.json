@@ -46,7 +46,8 @@
     "mpvue-calendar": "^3.0.1",
     "nuxt": "^3.10.0",
     "pinia": "^2.1.6",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "vditor": "^3.11.2"
   },
   "keywords": [
     "nuxt.js"

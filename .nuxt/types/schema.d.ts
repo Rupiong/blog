@@ -18,6 +18,8 @@ import { NuxtModule, ModuleDependencyMeta } from '@nuxt/schema'
   interface SharedPublicRuntimeConfig {
    apiUrl: string,
 
+   siteTitle: string,
+
    vcalendar: any,
   }
 declare module '@nuxt/schema' {

@@ -1,4 +1,4 @@
-import { v as $e, e as Vr } from './server.mjs';
+import { v as $e, e as Wr } from './server.mjs';
 
 function t(n2) {
   const t2 = $e.inject(n2, null);
@@ -63,7 +63,7 @@ function p(n2) {
 }
 function v(t2) {
   const r2 = $e.getCurrentInstance();
-  r2 && Vr(r2.proxy, t2);
+  r2 && Wr(r2.proxy, t2);
 }
 
 export { a, d, p, t, u, v };

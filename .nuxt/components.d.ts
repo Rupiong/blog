@@ -21,6 +21,7 @@ export const ContentInner: typeof import("../src/components/ContentInner.vue")['
 export const Footer: typeof import("../src/components/Footer.vue")['default']
 export const Header: typeof import("../src/components/Header.vue")['default']
 export const Siderbar: typeof import("../src/components/Siderbar.vue")['default']
+export const VditorPreview: typeof import("../src/components/VditorPreview.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logg_cb58c00fe4efe47945cd37df6649bfcf/node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logg_cb58c00fe4efe47945cd37df6649bfcf/node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logg_cb58c00fe4efe47945cd37df6649bfcf/node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -984,13 +985,13 @@ export const VanCollapseItem: typeof import("../node_modules/.pnpm/vant@4.9.22_v
 export const VanConfigProvider: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/config-provider/ConfigProvider")['default']
 export const VanContactCard: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/contact-card/ContactCard")['default']
 export const VanContactEdit: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/contact-edit/ContactEdit")['default']
-export const VanCountDown: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/count-down/CountDown")['default']
 export const VanContactList: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/contact-list/ContactList")['default']
+export const VanCountDown: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/count-down/CountDown")['default']
 export const VanCoupon: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/coupon/Coupon")['default']
 export const VanCouponCell: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/coupon-cell/CouponCell")['default']
 export const VanCouponList: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/coupon-list/CouponList")['default']
-export const VanDialog: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dialog/Dialog")['default']
 export const VanDatePicker: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/date-picker/DatePicker")['default']
+export const VanDialog: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dialog/Dialog")['default']
 export const VanDivider: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/divider/Divider")['default']
 export const VanDropdownItem: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-item/DropdownItem")['default']
 export const VanDropdownMenu: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-menu/DropdownMenu")['default']
@@ -1024,8 +1025,8 @@ export const VanProgress: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3
 export const VanPullRefresh: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/pull-refresh/PullRefresh")['default']
 export const VanRadio: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/radio/Radio")['default']
 export const VanRadioGroup: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/radio-group/RadioGroup")['default']
-export const VanRollingText: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rolling-text/RollingText")['default']
 export const VanRate: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rate/Rate")['default']
+export const VanRollingText: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rolling-text/RollingText")['default']
 export const VanRow: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/row/Row")['default']
 export const VanSearch: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/search/Search")['default']
 export const VanShareSheet: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/share-sheet/ShareSheet")['default']
@@ -1048,8 +1049,8 @@ export const VanSwipe: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.
 export const VanSwipeCell: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/swipe-cell/SwipeCell")['default']
 export const VanSwipeItem: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/swipe-item/SwipeItem")['default']
 export const VanSwitch: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/switch/Switch")['default']
-export const VanTabbar: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tabbar/Tabbar")['default']
 export const VanTab: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tab/Tab")['default']
+export const VanTabbar: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tabbar/Tabbar")['default']
 export const VanTabbarItem: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tabbar-item/TabbarItem")['default']
 export const VanTabs: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tabs/Tabs")['default']
 export const VanTag: typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tag/Tag")['default']
@@ -1081,6 +1082,7 @@ export const LazyContentInner: LazyComponent<typeof import("../src/components/Co
 export const LazyFooter: LazyComponent<typeof import("../src/components/Footer.vue")['default']>
 export const LazyHeader: LazyComponent<typeof import("../src/components/Header.vue")['default']>
 export const LazySiderbar: LazyComponent<typeof import("../src/components/Siderbar.vue")['default']>
+export const LazyVditorPreview: LazyComponent<typeof import("../src/components/VditorPreview.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logg_cb58c00fe4efe47945cd37df6649bfcf/node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logg_cb58c00fe4efe47945cd37df6649bfcf/node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logg_cb58c00fe4efe47945cd37df6649bfcf/node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>
@@ -2044,13 +2046,13 @@ export const LazyVanCollapseItem: LazyComponent<typeof import("../node_modules/.
 export const LazyVanConfigProvider: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/config-provider/ConfigProvider")['default']>
 export const LazyVanContactCard: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/contact-card/ContactCard")['default']>
 export const LazyVanContactEdit: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/contact-edit/ContactEdit")['default']>
-export const LazyVanCountDown: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/count-down/CountDown")['default']>
 export const LazyVanContactList: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/contact-list/ContactList")['default']>
+export const LazyVanCountDown: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/count-down/CountDown")['default']>
 export const LazyVanCoupon: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/coupon/Coupon")['default']>
 export const LazyVanCouponCell: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/coupon-cell/CouponCell")['default']>
 export const LazyVanCouponList: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/coupon-list/CouponList")['default']>
-export const LazyVanDialog: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dialog/Dialog")['default']>
 export const LazyVanDatePicker: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/date-picker/DatePicker")['default']>
+export const LazyVanDialog: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dialog/Dialog")['default']>
 export const LazyVanDivider: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/divider/Divider")['default']>
 export const LazyVanDropdownItem: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-item/DropdownItem")['default']>
 export const LazyVanDropdownMenu: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-menu/DropdownMenu")['default']>
@@ -2084,8 +2086,8 @@ export const LazyVanProgress: LazyComponent<typeof import("../node_modules/.pnpm
 export const LazyVanPullRefresh: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/pull-refresh/PullRefresh")['default']>
 export const LazyVanRadio: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/radio/Radio")['default']>
 export const LazyVanRadioGroup: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/radio-group/RadioGroup")['default']>
-export const LazyVanRollingText: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rolling-text/RollingText")['default']>
 export const LazyVanRate: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rate/Rate")['default']>
+export const LazyVanRollingText: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rolling-text/RollingText")['default']>
 export const LazyVanRow: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/row/Row")['default']>
 export const LazyVanSearch: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/search/Search")['default']>
 export const LazyVanShareSheet: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/share-sheet/ShareSheet")['default']>
@@ -2108,8 +2110,8 @@ export const LazyVanSwipe: LazyComponent<typeof import("../node_modules/.pnpm/va
 export const LazyVanSwipeCell: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/swipe-cell/SwipeCell")['default']>
 export const LazyVanSwipeItem: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/swipe-item/SwipeItem")['default']>
 export const LazyVanSwitch: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/switch/Switch")['default']>
-export const LazyVanTabbar: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tabbar/Tabbar")['default']>
 export const LazyVanTab: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tab/Tab")['default']>
+export const LazyVanTabbar: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tabbar/Tabbar")['default']>
 export const LazyVanTabbarItem: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tabbar-item/TabbarItem")['default']>
 export const LazyVanTabs: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tabs/Tabs")['default']>
 export const LazyVanTag: LazyComponent<typeof import("../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tag/Tag")['default']>

@@ -1,0 +1,2 @@
+import{q as e,v as n}from"../server.mjs";import{useHead as t,headSymbol as o}from"/Users/huangyuping/Desktop/rupiong/blog/node_modules/.pnpm/@unhead+vue@2.1.12_vue@3.5.30_typescript@6.0.2_/node_modules/@unhead/vue/dist/index.mjs";function s(s,u={}){const r=function(t){const s=t||e();return s?.ssrContext?.head||s?.runWithContext(()=>{if(n.hasInjectionContext())return n.inject(o)})}(u.nuxt);if(r)return t(s,{head:r,...u})}export{s as u};
+//# sourceMappingURL=v3-B4umo1cC.js.map

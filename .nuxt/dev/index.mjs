@@ -29,7 +29,7 @@ import { AsyncLocalStorage } from 'node:async_hooks';
 import { stringify, uneval } from 'file:///Users/huangyuping/Desktop/rupiong/blog/node_modules/.pnpm/devalue@5.6.4/node_modules/devalue/index.js';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/huangyuping/Desktop/rupiong/blog/node_modules/.pnpm/errx@0.1.0/node_modules/errx/dist/index.js';
 import { isVNode, isRef, toValue } from 'file:///Users/huangyuping/Desktop/rupiong/blog/node_modules/.pnpm/vue@3.5.30_typescript@6.0.2/node_modules/vue/index.mjs';
-import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file:///Users/huangyuping/Desktop/rupiong/blog/node_modules/.pnpm/@nuxt+vite-builder@3.21.2_eslint@8.57.1_magicast@0.5.2_nuxt@3.21.2_@parcel+watcher@2.5._2e5d88204e6cb4fa22287b86b0a63694/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
+import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file:///Users/huangyuping/Desktop/rupiong/blog/node_modules/.pnpm/@nuxt+vite-builder@3.21.2_@types+node@25.6.0_eslint@8.57.1_magicast@0.5.2_nuxt@3.21.2_@_a0e59852fbc1c62f7b0ae0ad140a7b4e/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname as dirname$1, resolve as resolve$1 } from 'file:///Users/huangyuping/Desktop/rupiong/blog/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
@@ -649,7 +649,8 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "apiUrl": "",
+    "apiUrl": "http://localhost:9001/v1",
+    "siteTitle": "HYPER",
     "vcalendar": ""
   }
 };
@@ -2029,7 +2030,7 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _gZdxAvibweSWqJ3FTLSqMry3Olb9mc2wEyg78I21wZ0 = (function(nitro) {
+const _B88rpmYWjOuZBino0q9gPhrWcmwU3Saat2M_lurks8 = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
@@ -2060,7 +2061,7 @@ const asyncContext = getContext("nuxt-dev", {
 	asyncContext: true,
 	AsyncLocalStorage
 });
-const _2zDatjMDDKUtegwKQrb3z8S8Rwl4LVJlMSBZBpXfOM = (nitroApp) => {
+const __Q8ifowqou6fO8iTHqra5Lfg3HOmmYMVvoe9cELjuhg = (nitroApp) => {
 	const handler = nitroApp.h3App.handler;
 	nitroApp.h3App.handler = (event) => {
 		return asyncContext.callAsync({
@@ -2134,8 +2135,8 @@ function onConsoleLog(callback) {
 }
 
 const plugins = [
-  _gZdxAvibweSWqJ3FTLSqMry3Olb9mc2wEyg78I21wZ0,
-_2zDatjMDDKUtegwKQrb3z8S8Rwl4LVJlMSBZBpXfOM,
+  _B88rpmYWjOuZBino0q9gPhrWcmwU3Saat2M_lurks8,
+__Q8ifowqou6fO8iTHqra5Lfg3HOmmYMVvoe9cELjuhg,
 _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw
 ];
 
@@ -2599,13 +2600,13 @@ async function getIslandContext(event) {
 	};
 }
 
-const _lazy_eL8yIB = () => Promise.resolve().then(function () { return renderer; });
+const _lazy_ctxqMV = () => Promise.resolve().then(function () { return renderer; });
 
 const handlers = [
   { route: '', handler: __om7lw, lazy: false, middleware: true, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_eL8yIB, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_ctxqMV, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_eL8yIB, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_ctxqMV, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

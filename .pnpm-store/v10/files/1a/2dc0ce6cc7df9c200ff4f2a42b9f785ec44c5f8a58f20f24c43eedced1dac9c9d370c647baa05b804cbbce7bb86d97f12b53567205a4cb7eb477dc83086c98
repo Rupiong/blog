@@ -1,0 +1,76 @@
+{
+  "name": "@samk-dev/nuxt-vcalendar",
+  "version": "1.0.4",
+  "description": "Integrates V Calendar in Nuxt",
+  "repository": "samk-dev/nuxt-vcalendar",
+  "license": "MIT",
+  "author": {
+    "name": "Sam K",
+    "url": "https://samk.dev"
+  },
+  "bugs": "https://github.com/samk-dev/nuxt-uikit3/issues",
+  "keywords": [
+    "nuxt-module",
+    "vcalendar",
+    "nuxt-calendar-component"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && git push --follow-tags",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{ts,tsx,vue,json}\"",
+    "prepare": "husky",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "update:deps": "npx npm-check-updates --interactive --format group"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.12.3",
+    "@popperjs/core": "^2.11.8",
+    "v-calendar": "^3.1.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@nuxt/module-builder": "^0.8.1",
+    "@nuxt/schema": "^3.12.3",
+    "@samk-dev/eslint-config": "^1.0.6",
+    "@samk-dev/prettier-config": "^1.0.4",
+    "@types/node": "^20.14.10",
+    "changelogen": "^0.5.5",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "nuxt": "^3.12.3"
+  },
+  "overrides": {
+    "vue": "latest"
+  },
+  "lint-staged": {
+    "**/*.{.js,ts,vue,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  }
+}

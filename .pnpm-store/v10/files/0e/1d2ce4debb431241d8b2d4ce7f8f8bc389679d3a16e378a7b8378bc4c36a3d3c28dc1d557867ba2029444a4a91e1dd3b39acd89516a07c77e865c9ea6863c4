@@ -1,0 +1,9 @@
+import type { IncomingHttpHeaders } from 'node:http';
+import type { ViewportOptions } from './types.js';
+export type DetectBreakpointInput = {
+    cookie: string;
+    headers: IncomingHttpHeaders;
+};
+export declare function detectBreakpoint(options: ViewportOptions, input: Partial<DetectBreakpointInput>): Promise<string>;
+export declare function extendOptions(options?: Partial<ViewportOptions>, extendFrom?: ViewportOptions): ViewportOptions;
+export declare function parseCookie(input: string): Record<string, string>;

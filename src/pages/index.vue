@@ -1,51 +1,98 @@
 <template>
-  <div class="flex flex-col items-center justify-center gap-6">
-    <NuxtLink
-      :to="'article/article_' + item"
-      class="flex flex-col gap-2 border-b last:border-none border-[#f1f1f1] pb-10 group cursor-pointer"
-      v-for="item in 10"
-      :key="item"
-    >
-      <div
-        class="text-[22px] text-[#333] font-bold group-hover:text-primary line-clamp-2"
+  <div class="flex flex-col items-center justify-center gap-6 w-full">
+    <div v-if="pending" class="text-[#999] py-12">加载中…</div>
+    <div v-else-if="error" class="text-error py-12">
+      {{ error.message || "文章列表加载失败" }}
+    </div>
+    <template v-else>
+      <NuxtLink
+        v-for="item in list"
+        :key="String(item.id)"
+        :to="`/article/article_${item.id}`"
+        class="flex flex-col gap-2 border-b last:border-none border-[#f1f1f1] pb-10 group cursor-pointer w-full"
       >
-        作为一个前端，看不懂@黄玄 的几乎每一个回答，只有我自己吗？
-      </div>
-      <div
-        class="text-[14px] text-[#666] group-hover:underline decoration-solid decoration-[#999] line-clamp-3"
-      >
-        雪碧（doodlewind）邀请我给《JavaScript 二十年》 写的推荐序。 JavaScript
-        常常被戏称为一门偶然成功的玩具语言。而实际上，它出身名门，更是成长在聚光灯之下。纵观历史，有资格被标准化的编程语言甚少，它因此成为多方角力的战场，却也有幸同时得到业界与学界先驱的亲传。时至今日，我们甚至难言是它背负了太多妥协，还是这些妥协才成就了它呢。以史为鉴，或许你会有自己的
-      </div>
-      <div
-        class="flex justify-between text-[18px] text-[#999] italic font-thin"
-      >
-        <div>Posted by Hux on April 10, 2021</div>
-      </div>
-    </NuxtLink>
+        <div
+          class="text-[22px] text-[#333] font-bold group-hover:text-primary line-clamp-2"
+        >
+          {{ item.title }}
+        </div>
+        <div
+          v-if="item.summary"
+          class="text-[14px] text-[#666] group-hover:underline decoration-solid decoration-[#999] line-clamp-3"
+        >
+          {{ item.summary }}
+        </div>
+        <div
+          class="flex justify-between text-[18px] text-[#999] italic font-thin"
+        >
+          <div>{{ formatMeta(item) }}</div>
+        </div>
+      </NuxtLink>
+      <div v-if="!list.length" class="text-[#999] py-12">暂无文章</div>
+    </template>
   </div>
-  <div class="flex justify-center" v-if="viewport.isGreaterOrEquals('md')">
-    <a-pagination v-model:current="current" :total="50" show-less-items />
+  <div class="flex justify-center py-4">
+    <a-pagination
+      v-model:current="page"
+      :total="total"
+      :page-size="pageSize"
+      show-less-items
+      :disabled="pending"
+      hide-on-single-page
+    />
   </div>
 </template>
 <script setup lang="ts">
 import index_bg from "@/assets/images/index_bg.jpeg";
+import { fetchPublicArticleList } from "@/api/article";
+
 definePageMeta({
   showSiderBar: true,
   title: "Copyman Blog",
   slogan: "天一亮時間就不屬於我了",
   headerBgUrl: index_bg,
 });
+
 useHead({
   title: "copyman blog",
-  ogTitle: "我的神奇网站",
-  description: "这是我的神奇网站，让我来告诉你关于它的一切。",
-  ogDescription: "这是我的神奇网站，让我来告诉你关于它的一切。",
-  ogImage: "https://example.com/image.png",
-  twitterCard: "summary_large_image",
+  meta: [
+    { property: "og:title", content: "我的神奇网站" },
+    {
+      name: "description",
+      content: "这是我的神奇网站，让我来告诉你关于它的一切。",
+    },
+    {
+      property: "og:description",
+      content: "这是我的神奇网站，让我来告诉你关于它的一切。",
+    },
+    { property: "og:image", content: "https://example.com/image.png" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
 });
+
 const viewport = useViewport();
-const current = ref(2);
+const page = ref(1);
+const pageSize = ref(10);
+
+const { data, error, pending } = await useAsyncData(
+  () => `public-articles-${page.value}-${pageSize.value}`,
+  () => fetchPublicArticleList({ page: page.value, pageSize: pageSize.value }),
+  { watch: [page, pageSize] }
+);
+
+const list = computed(() => data.value?.list ?? []);
+const total = computed(() => data.value?.total ?? 0);
+
+const dayjs = useDayjs();
+function formatMeta(item: { createdAt?: string; author?: string }) {
+  const parts: string[] = [];
+  if (item.author) parts.push(item.author);
+  if (item.createdAt) {
+    const d = dayjs(item.createdAt);
+    parts.push(d.isValid() ? d.format("YYYY年MM月DD日") : item.createdAt);
+  }
+  return parts.length ? parts.join(" · ") : "";
+}
 
 watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
   console.log("Breakpoint updated:", oldBreakpoint, "->", newBreakpoint);

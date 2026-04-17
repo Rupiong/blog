@@ -10,7 +10,7 @@
     ]"
   >
     <div class="font-bold text-[18px] hover:text-primary">
-      <NuxtLink to="/">Copyman</NuxtLink>
+      <NuxtLink to="/">{{ config?.public?.siteTitle }}</NuxtLink>
     </div>
     <div class="hidden sm:flex items-center mr-4">
       <div class="flex items-center gap-4 text-[14px]">
@@ -50,6 +50,8 @@
   </van-popup>
 </template>
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
 const props = defineProps({
   //是否为固定布局
   isFixed: {

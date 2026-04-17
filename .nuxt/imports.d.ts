@@ -33,6 +33,8 @@ export { showDialog, showConfirmDialog, showImagePreview, showNotify, showToast,
 export { message, notification, Modal, App } from '../node_modules/.pnpm/@ant-design-vue+nuxt@1.4.6_ant-design-vue@4.2.6_vue@3.5.30_typescript@6.0.2___magicast@_11bf3379b5956a48d4e0b3b3e4c258a8/node_modules/@ant-design-vue/nuxt/dist/runtime/antd';
 export { definePageMeta } from '../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logg_cb58c00fe4efe47945cd37df6649bfcf/node_modules/nuxt/dist/pages/runtime/composables';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
+export { useApiFetch } from '../src/utils/request';
 export { usePinia } from '../node_modules/.pnpm/@pinia+nuxt@0.4.11_magicast@0.5.2_typescript@6.0.2_vue@3.5.30_typescript@6.0.2_/node_modules/@pinia/nuxt/dist/runtime/composables';
 export { useDayjs } from '../node_modules/.pnpm/dayjs-nuxt@2.1.11_magicast@0.5.2/node_modules/dayjs-nuxt/dist/runtime/composables/dayjs';
 export { useViewport } from '../node_modules/.pnpm/nuxt-viewport@2.4.0_magicast@0.5.2_vue@3.5.30_typescript@6.0.2_/node_modules/nuxt-viewport/dist/runtime/composables';
+export { useNuxtDevTools } from '../node_modules/.pnpm/@nuxt+devtools@4.0.0-alpha.3_@pnpm+logger@1001.0.1_db0@0.3.4_ioredis@5.10.1_typescript@_66defedb956cfd632a68428dfcf57f42/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';

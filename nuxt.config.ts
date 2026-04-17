@@ -108,6 +108,7 @@ export default defineNuxtConfig({
     // 对客户端暴露的公共密钥
     public: {
       apiUrl: process.env.GLOB_API_URL,
+      siteTitle: process.env.NUXT_SITE_TITLE_SHORT,
     },
   },
   //跨域处理
