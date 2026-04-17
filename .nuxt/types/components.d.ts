@@ -995,9 +995,9 @@ interface _GlobalComponents {
   VanDropdownItem: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-item/DropdownItem")['default']
   VanDropdownMenu: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-menu/DropdownMenu")['default']
   VanEmpty: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/empty/Empty")['default']
+  VanField: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/field/Field")['default']
   VanFloatingBubble: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/floating-bubble/FloatingBubble")['default']
   VanFloatingPanel: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/floating-panel/FloatingPanel")['default']
-  VanField: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/field/Field")['default']
   VanForm: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/form/Form")['default']
   VanGrid: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/grid/Grid")['default']
   VanGridItem: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/grid-item/GridItem")['default']
@@ -1026,8 +1026,8 @@ interface _GlobalComponents {
   VanRadioGroup: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/radio-group/RadioGroup")['default']
   VanRate: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rate/Rate")['default']
   VanRollingText: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rolling-text/RollingText")['default']
-  VanSearch: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/search/Search")['default']
   VanRow: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/row/Row")['default']
+  VanSearch: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/search/Search")['default']
   VanShareSheet: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/share-sheet/ShareSheet")['default']
   VanSidebar: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/sidebar/Sidebar")['default']
   VanSidebarItem: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/sidebar-item/SidebarItem")['default']
@@ -2055,9 +2055,9 @@ interface _GlobalComponents {
   LazyVanDropdownItem: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-item/DropdownItem")['default']>
   LazyVanDropdownMenu: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-menu/DropdownMenu")['default']>
   LazyVanEmpty: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/empty/Empty")['default']>
+  LazyVanField: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/field/Field")['default']>
   LazyVanFloatingBubble: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/floating-bubble/FloatingBubble")['default']>
   LazyVanFloatingPanel: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/floating-panel/FloatingPanel")['default']>
-  LazyVanField: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/field/Field")['default']>
   LazyVanForm: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/form/Form")['default']>
   LazyVanGrid: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/grid/Grid")['default']>
   LazyVanGridItem: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/grid-item/GridItem")['default']>
@@ -2086,8 +2086,8 @@ interface _GlobalComponents {
   LazyVanRadioGroup: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/radio-group/RadioGroup")['default']>
   LazyVanRate: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rate/Rate")['default']>
   LazyVanRollingText: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/rolling-text/RollingText")['default']>
-  LazyVanSearch: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/search/Search")['default']>
   LazyVanRow: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/row/Row")['default']>
+  LazyVanSearch: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/search/Search")['default']>
   LazyVanShareSheet: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/share-sheet/ShareSheet")['default']>
   LazyVanSidebar: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/sidebar/Sidebar")['default']>
   LazyVanSidebarItem: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/sidebar-item/SidebarItem")['default']>
