@@ -15,7 +15,7 @@ const props = withDefaults(
     content: string;
     format?: "auto" | "markdown" | "html";
   }>(),
-  { format: "auto" }
+  { format: "auto" },
 );
 
 const previewEl = ref<HTMLDivElement | null>(null);
@@ -41,12 +41,14 @@ async function renderMarkdown() {
   }
   const token = ++previewToken;
   const Vditor = (await import("vditor")).default;
+
   await import("vditor/dist/index.css");
   if (token !== previewToken) return;
   el.innerHTML = "";
   await Vditor.preview(el, md, {
     theme: { current: "light" },
     hljs: { style: "github" },
+    mode: "light",
   });
 }
 
@@ -55,7 +57,7 @@ watch(
   () => {
     if (!isHtml.value) void renderMarkdown();
   },
-  { flush: "post" }
+  { flush: "post" },
 );
 
 onBeforeUnmount(() => {
@@ -67,7 +69,7 @@ watch(
   (el) => {
     if (el && !isHtml.value) void renderMarkdown();
   },
-  { flush: "post" }
+  { flush: "post" },
 );
 </script>
 

@@ -18,13 +18,17 @@ const dayjs = useDayjs();
 const metaLine = computed(() => {
   const a = article.value;
   if (!a) return "";
-  const dateStr = a.createdAt
-    ? dayjs(a.createdAt).isValid()
-      ? dayjs(a.createdAt).format("YYYY年MM月DD日")
-      : a.createdAt
-    : "";
-  if (a.author && dateStr) return `${a.author} · ${dateStr}`;
-  return a.author ?? dateStr ?? "";
+  const dateStr =
+    a.created_at != null && a.created_at !== 0
+      ? (() => {
+          const d =
+            a.created_at < 1e12 ? dayjs.unix(a.created_at) : dayjs(a.created_at);
+          return d.isValid() ? d.format("YYYY年MM月DD日") : "";
+        })()
+      : "";
+  const authorStr = a.user?.name ?? "";
+  if (authorStr && dateStr) return `${authorStr} · ${dateStr}`;
+  return authorStr || dateStr;
 });
 
 watch(
@@ -38,8 +42,8 @@ watch(
 );
 </script>
 <template>
-  <div class="w-full flex flex-col justify-center items-center md:mt-6  overflow-hidden">
-    <div class="w-full py-6 px-6 rounded-[6px] overflow-y-auto">
+  <div class="w-full flex flex-col justify-start items-center md:mt-6">
+    <div class="w-full py-6 px-6 rounded-[6px]">
       <div v-if="pending" class="text-[#999] py-12">加载中…</div>
       <div v-else-if="error" class="text-error py-12">
         {{ error.message || "文章加载失败" }}
@@ -59,12 +63,12 @@ watch(
         >
           {{ article.title }}
         </div>
-        <div
+        <!-- <div
           v-if="article.summary"
           class="text-[22px] md:text-[32px] mt-2 text-[#666]"
         >
           {{ article.summary }}
-        </div>
+        </div> -->
         <div
           v-if="metaLine"
           class="italic font-thin text-[18px] mt-2 border-b border-dashed pb-6 text-[#999]"
@@ -79,7 +83,7 @@ watch(
             </template>
           </ClientOnly>
         </div>
-        <Comment />
+        <!-- <Comment /> -->
       </template>
     </div>
   </div>

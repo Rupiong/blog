@@ -16,12 +16,13 @@
         >
           {{ item.title }}
         </div>
-        <div
+        <!-- <div
           v-if="item.summary"
           class="text-[14px] text-[#666] group-hover:underline decoration-solid decoration-[#999] line-clamp-3"
         >
           {{ item.summary }}
-        </div>
+        </div> -->
+        <!-- <VditorPreview :content="item.summary ?? ''" /> -->
         <div
           class="flex justify-between text-[18px] text-[#999] italic font-thin"
         >
@@ -31,20 +32,10 @@
       <div v-if="!list.length" class="text-[#999] py-12">暂无文章</div>
     </template>
   </div>
-  <div class="flex justify-center py-4">
-    <a-pagination
-      v-model:current="page"
-      :total="total"
-      :page-size="pageSize"
-      show-less-items
-      :disabled="pending"
-      hide-on-single-page
-    />
-  </div>
 </template>
 <script setup lang="ts">
 import index_bg from "@/assets/images/index_bg.jpeg";
-import { fetchPublicArticleList } from "@/api/article";
+import { fetchPublicArticleList, type ArticleListItem } from "@/api/article";
 
 definePageMeta({
   showSiderBar: true,
@@ -72,7 +63,7 @@ useHead({
 
 const viewport = useViewport();
 const page = ref(1);
-const pageSize = ref(10);
+const pageSize = ref(100);
 
 const { data, error, pending } = await useAsyncData(
   () => `public-articles-${page.value}-${pageSize.value}`,
@@ -84,12 +75,16 @@ const list = computed(() => data.value?.list ?? []);
 const total = computed(() => data.value?.total ?? 0);
 
 const dayjs = useDayjs();
-function formatMeta(item: { createdAt?: string; author?: string }) {
+
+function formatMeta(item: ArticleListItem) {
   const parts: string[] = [];
-  if (item.author) parts.push(item.author);
-  if (item.createdAt) {
-    const d = dayjs(item.createdAt);
-    parts.push(d.isValid() ? d.format("YYYY年MM月DD日") : item.createdAt);
+  if (item.user?.name) parts.push(item.user.name);
+  if (item.created_at) {
+    const d =
+      item.created_at < 1e12
+        ? dayjs.unix(item.created_at)
+        : dayjs(item.created_at);
+    parts.push(d.isValid() ? d.format("YYYY年MM月DD日") : String(item.created_at));
   }
   return parts.length ? parts.join(" · ") : "";
 }

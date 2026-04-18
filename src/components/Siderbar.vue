@@ -14,12 +14,12 @@
           />
         </div>
         <div class="flex items-center justify-between gap-2">
-          <span class="text-[18px] font-bold text-[#333]">@小黄花</span>
+          <span class="text-[18px] font-bold text-[#333]">@Copyman</span>
           <span class="text-[14px] text-[#666]">前端开发工程师</span>
         </div>
-        <div class="italic text-[#999] text-[14px]">
+        <!-- <div class="italic text-[#999] text-[14px]">
           -- 他不过是泛黄没人理采的花朵。
-        </div>
+        </div> -->
         <div class="flex items-center justify-between mt-2">
           <APopover>
             <template #content>
@@ -36,16 +36,17 @@
               <Icon class="text-white" name="ic:baseline-wechat" />
             </div>
           </APopover>
-          <APopover>
-            <template #content>
-              <div class="w-full h-40 bg-[#ccc]"></div>
-            </template>
+          <NuxtLink
+            to="https://www.zhihu.com/people/huang-yu-ping-28-13"
+            target="_blank"
+          >
             <div
               class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
             >
-              <Icon class="text-white" name="fa6-brands:weibo" />
+              <Icon class="text-white text-2xl" name="fa6-brands:zhihu" />
             </div>
-          </APopover>
+          </NuxtLink>
+
           <NuxtLink to="https://github.com/Rupiong" target="_blank">
             <div
               class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
@@ -55,7 +56,7 @@
           </NuxtLink>
           <APopover>
             <template #content>
-              <div class="w-full h-40 bg-[#ccc]"></div>
+              <div class="w-full p-4">83470005@qq.com</div>
             </template>
             <div
               class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"

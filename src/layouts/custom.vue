@@ -3,14 +3,14 @@ const viewport = useViewport();
 </script>
 
 <template>
-  <div class="w-full h-full flex flex-col overflow-hidden">
+  <div class="w-full h-full flex flex-col overflow-y-auto">
     <Header
       key="22"
       :isLucency="false"
       colorClass="text-black"
       :isFixed="false"
     />
-    <div class="w-full flex-1 flex flex-col items-start justify-start overflow-hidden ">
+    <div class="w-full flex-1 flex flex-col items-start justify-start ">
       <Content>
         <ContentInner>
           <slot />

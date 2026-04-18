@@ -1,90 +1,73 @@
 <template>
-  <div class="flex flex-col gap-10">
-    <div class="flex flex-col gap-2 border-b pb-10 border-dashed">
-      <!-- <div class="text-[20px] font-bold text-[#33]">自我简介</div> -->
-      <div class="text-[14px] text-[#666] flex items-center gap-4">
-        <div class="w-32 h-40 bg-[#ccc] shrink-0 rounded-md overflow-hidden">
-          <img
-            class="w-full h-full object-cover"
-            src="@/assets/images/about_avatar.jpg"
-          />
-        </div>
-        <div class="mt-2 leading-[2]">
-          Hey，我是黄裕平（Rupiong），一个略懂编程和设计的斜杆青年。19年毕业于龙岩学院采矿工程专业,通过自学,先后从事过平面设计、UI设计、编程方面的工作,目前是一名前端开发工程师。
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col gap-2">
-      <div class="text-[20px] font-bold text-[#33]">职业技能</div>
-      <div class="text-[14px] text-[#666] flex items-center gap-4 flex-wrap">
-        <div
-          v-for="(item, index) in technologyList"
-          :key="index"
-          class="flex items-center gap-2 border w-fit text-white p-1 rounded-full bg-black cursor-pointer transition ease-in-out duration-300 hover:scale-105 hover:drop-shadow-lg hover:text-primary"
-        >
-          <div
-            class="w-8 h-8 bg-white p-1.5 rounded-full flex items-center justify-center"
-          >
-            <Icon class="w-full h-full leading-none" :name="item.icon" />
+  <div class="relative w-full h-full bg-white flex flex-col gap-10">
+    <div class="max-w-[1200px] h-full mx-auto flex items-center  text-black">
+      <div class="w-full justify-end flex gap-4 p-6">
+        <div class="w-full md:w-3/4 text-lg flex flex-col">
+          <div class="text-[48px] font-bold leading-[1.2]">Hi, I’m Huang Yuping ✨</div>
+          <div class="mt-6 md:mt-14 flex flex-col gap-4">
+            <div>
+              I’m a senior front-end engineer based in Xiamen. Most of my
+              day-to-day work is H5, with a strong focus on user-facing
+              products. I’ve built solid experience in UI and interaction, and I
+              enjoy making pages that work well and look good.
+            </div>
+            <div>
+              I’ve also done graphic design, so I’m a bit more tuned in to
+              layout, hierarchy, and visual rhythm—and I try to carry that
+              through in code so the experience feels complete and consistent.
+            </div>
+            <div>
+              I believe good front-end isn’t just “it runs”; it should feel
+              smooth, trustworthy, and a little pleasant in every scroll, tap,
+              and load.
+            </div>
+            <div>
+              When I’m not coding, I like swimming 🏊, walking in the
+              park 🌳, and sometimes gaming 🎮 to unwind.
+            </div>
           </div>
-          <div class="font-bold mr-2 leading-none text-[12px]">
-            {{ item.name }}
+          <div class="mt-6 md:mt-14 text-[#ccc] text-[15px]">
+            <div>
+              你好，我是黄裕平，👨‍💻 我是一名前端开发工程师，常驻厦门。日常工作以 H5 为主，更偏向
+              用户端 场景；在 UI 与交互
+              上积累了不少实战经验，喜欢把页面做得既好用又顺眼。
+            </div>
+            <div>
+              我也曾做过
+              平面设计，所以对版式、层次和视觉节奏会多一分敏感——写代码时也会尽量让体验更完整、更一致。
+            </div>
+            <div>
+              我相信好的前端不只是「能跑」，更要让用户在滑动、点击、加载之间感到顺畅、可信、有一点愉悦感。
+            </div>
+            <div>
+              不敲代码的时候，我喜欢 游泳 🏊、在 公园散步 🌳，偶尔也会 打打游戏
+              🎮 放松一下。
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-2">
-      <div class="text-[20px] font-bold text-[#33]">兴趣爱好</div>
-      <div class="text-[14px] text-[#666] flex items-center gap-4 flex-wrap">
-        <ul class="list-decimal ml-3">
-          <li>研究最新的前端技术</li>
-          <li>打打英雄联盟</li>
-          <li>上班摸鱼听音乐</li>
-          <li>业余游泳爱好者</li>
-          <li>湖人总冠军</li>
-          <li>股市的小韭菜</li>
-        </ul>
-      </div>
-    </div>
-    <div class="flex flex-col gap-2">
-      <div class="text-[20px] font-bold text-[#33]">Todo List (2023年)</div>
-      <div class="text-[14px] text-[#666] flex items-center gap-4 flex-wrap">
-        <ul class="flex flex-col gap-4 list-decimal ml-3">
-          <li>
-            <van-checkbox
-              shape="square"
-              v-model="checked"
-              label-position="left"
-            >
-              研究最新的前端技术。
-            </van-checkbox>
-          </li>
-          <li>
-            <van-checkbox
-              shape="square"
-              v-model="checked"
-              label-position="left"
-            >
-              研究最新的前端技术。
-            </van-checkbox>
-          </li>
-          <li>
-            <van-checkbox
-              shape="square"
-              v-model="checked"
-              label-position="left"
-            >
-              研究最新的前端技术。
-            </van-checkbox>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <Particles
+      :particle-count="400"
+      :particle-spread="10"
+      :speed="0.1"
+      :particle-colors="['#dddddd']"
+      :move-particles-on-hover="true"
+      :particle-hover-factor="1"
+      :alpha-particles="false"
+      :particle-base-size="100"
+      :size-randomness="1"
+      :camera-distance="20"
+      :disable-rotation="false"
+      class="w-full h-full"
+    />
   </div>
 </template>
 <script setup lang="ts">
+import Particles from "@/components/Particles.vue";
 import about_bg from "@/assets/images/about_bg.jpg";
 definePageMeta({
+  layout: "custom-full",
   showSiderBar: false,
   title: "About Me",
   slogan: "黑夜, 總是最安靜的角落。",
