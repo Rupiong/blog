@@ -1,6 +1,10 @@
 <template>
-  <div class="relative w-full h-full bg-white flex flex-col gap-10">
-    <div class="max-w-[1200px] h-full mx-auto flex items-center  text-black">
+  <div
+    class="relative flex h-full w-full flex-col gap-10 bg-white transition-colors dark:bg-zinc-900"
+  >
+    <div
+      class="mx-auto flex h-full max-w-[1200px] items-center text-black transition-colors dark:text-zinc-100"
+    >
       <div class="w-full justify-end flex gap-4 p-6">
         <div class="w-full md:w-3/4 text-lg flex flex-col">
           <div class="text-[48px] font-bold leading-[1.2]">Hi, I’m Huang Yuping ✨</div>

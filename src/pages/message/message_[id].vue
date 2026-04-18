@@ -26,11 +26,13 @@ useHead({
 </script>
 
 <template>
-  <div class="w-full h-full bg-white flex flex-col  md:pt-6">
+  <div
+    class="flex h-full w-full flex-col bg-white transition-colors dark:bg-zinc-900 md:pt-6"
+  >
     <div class="w-full p-6 rounded-[6px]">
       <div class="flex items-start gap-4 border-b border-dashed pb-6">
         <div
-          class="w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-full overflow-hidden bg-[#f5f5f5] ring-1 ring-[#eee]"
+          class="h-16 w-16 shrink-0 overflow-hidden rounded-full bg-[#f5f5f5] ring-1 ring-[#eee] md:h-20 md:w-20 dark:bg-zinc-800 dark:ring-zinc-600"
         >
           <img
             class="w-full h-full object-cover"

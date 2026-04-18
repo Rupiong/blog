@@ -4,7 +4,7 @@
     class="vditor-reset article-html max-w-none"
     v-html="content"
   />
-  <div v-else ref="previewEl" class="vditor-reset max-w-none" />
+  <div v-else ref="previewEl" class="vditor-reset max-w-none dark:text-[#ccc]" />
 </template>
 
 <script setup lang="ts">

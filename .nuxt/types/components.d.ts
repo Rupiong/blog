@@ -996,8 +996,8 @@ interface _GlobalComponents {
   VanCouponList: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/coupon-list/CouponList")['default']
   VanDatePicker: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/date-picker/DatePicker")['default']
   VanDialog: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dialog/Dialog")['default']
-  VanDivider: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/divider/Divider")['default']
   VanDropdownItem: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-item/DropdownItem")['default']
+  VanDivider: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/divider/Divider")['default']
   VanDropdownMenu: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-menu/DropdownMenu")['default']
   VanEmpty: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/empty/Empty")['default']
   VanField: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/field/Field")['default']
@@ -1007,8 +1007,8 @@ interface _GlobalComponents {
   VanGrid: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/grid/Grid")['default']
   VanGridItem: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/grid-item/GridItem")['default']
   VanHighlight: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/highlight/Highlight")['default']
-  VanIcon: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/icon/Icon")['default']
   VanImage: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/image/Image")['default']
+  VanIcon: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/icon/Icon")['default']
   VanImagePreview: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/image-preview/ImagePreview")['default']
   VanIndexAnchor: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/index-anchor/IndexAnchor")['default']
   VanIndexBar: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/index-bar/IndexBar")['default']
@@ -1061,8 +1061,8 @@ interface _GlobalComponents {
   VanTextEllipsis: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/text-ellipsis/TextEllipsis")['default']
   VanTimePicker: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/time-picker/TimePicker")['default']
   VanToast: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/toast/Toast")['default']
-  VanUploader: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/uploader/Uploader")['default']
   VanTreeSelect: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tree-select/TreeSelect")['default']
+  VanUploader: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/uploader/Uploader")['default']
   VanWatermark: typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/watermark/Watermark")['default']
   VDatePicker: typeof import("v-calendar")['DatePicker']
   VCalendar: typeof import("v-calendar")['Calendar']
@@ -2061,8 +2061,8 @@ interface _GlobalComponents {
   LazyVanCouponList: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/coupon-list/CouponList")['default']>
   LazyVanDatePicker: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/date-picker/DatePicker")['default']>
   LazyVanDialog: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dialog/Dialog")['default']>
-  LazyVanDivider: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/divider/Divider")['default']>
   LazyVanDropdownItem: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-item/DropdownItem")['default']>
+  LazyVanDivider: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/divider/Divider")['default']>
   LazyVanDropdownMenu: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/dropdown-menu/DropdownMenu")['default']>
   LazyVanEmpty: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/empty/Empty")['default']>
   LazyVanField: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/field/Field")['default']>
@@ -2072,8 +2072,8 @@ interface _GlobalComponents {
   LazyVanGrid: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/grid/Grid")['default']>
   LazyVanGridItem: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/grid-item/GridItem")['default']>
   LazyVanHighlight: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/highlight/Highlight")['default']>
-  LazyVanIcon: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/icon/Icon")['default']>
   LazyVanImage: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/image/Image")['default']>
+  LazyVanIcon: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/icon/Icon")['default']>
   LazyVanImagePreview: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/image-preview/ImagePreview")['default']>
   LazyVanIndexAnchor: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/index-anchor/IndexAnchor")['default']>
   LazyVanIndexBar: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/index-bar/IndexBar")['default']>
@@ -2126,8 +2126,8 @@ interface _GlobalComponents {
   LazyVanTextEllipsis: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/text-ellipsis/TextEllipsis")['default']>
   LazyVanTimePicker: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/time-picker/TimePicker")['default']>
   LazyVanToast: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/toast/Toast")['default']>
-  LazyVanUploader: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/uploader/Uploader")['default']>
   LazyVanTreeSelect: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/tree-select/TreeSelect")['default']>
+  LazyVanUploader: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/uploader/Uploader")['default']>
   LazyVanWatermark: LazyComponent<typeof import("../../node_modules/.pnpm/vant@4.9.22_vue@3.5.30_typescript@6.0.2_/node_modules/vant/es/watermark/Watermark")['default']>
   LazyVDatePicker: LazyComponent<typeof import("v-calendar")['DatePicker']>
   LazyVCalendar: LazyComponent<typeof import("v-calendar")['Calendar']>

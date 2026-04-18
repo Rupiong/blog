@@ -1,31 +1,52 @@
 <template>
   <div
     :class="[
-      'top-0 z-20 w-full flex items-center justify-between py-4 px-6 border-b transition ease-in-out duration-300',
+      'top-0 z-20 w-full flex items-center justify-between py-4 px-3 md:px-6 border-b transition ease-in-out duration-300',
       props.isFixed ? 'fixed' : 'sticky',
       props.isLucency
         ? 'bg-white/0 border-white/5'
-        : 'bg-white/70 border-[#f1f1f1] shadow-sm shadow-[#f5f5f5]    backdrop-blur-sm',
+        : 'border-[#f1f1f1] bg-white/70 shadow-sm shadow-[#f5f5f5] backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-950/80 dark:shadow-zinc-950',
       props.colorClass,
+      !props.isLucency ? 'dark:text-zinc-100' : '',
     ]"
   >
     <div class="font-bold text-[18px] hover:text-primary">
       <NuxtLink to="/">{{ config?.public?.siteTitle }}</NuxtLink>
     </div>
-    <div class="hidden sm:flex items-center mr-4">
-      <div class="flex items-center gap-4 text-[14px]">
-        <div v-for="(item, index) in menuList" :key="index">
-          <NuxtLink :to="item.url">{{ item.name }}</NuxtLink>
+    <div class="flex items-center gap-2 sm:gap-3">
+      <div class="hidden sm:flex items-center">
+        <div class="flex items-center gap-3 text-[14px]">
+          <div v-for="(item, index) in menuList" :key="index">
+            <NuxtLink :to="item.url">{{ item.name }}</NuxtLink>
+          </div>
         </div>
-        <!-- <div
-          class="flex items-center gap-2 bg-black p-2 rounded-full text-white"
-        >
-          <Icon name="uiw:search" />
-        </div> -->
       </div>
-    </div>
-    <div class="block sm:hidden" @click="chooseMenuHandler">
-      <Icon name="material-symbols:dehaze-rounded" />
+      <button
+        type="button"
+        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full  transition hover:bg-black/5 dark:hover:bg-white/10"
+        :class="
+          props.isLucency
+            ? 'text-white'
+            : 'text-zinc-800 dark:text-zinc-200'
+        "
+        aria-label="切换浅色 / 深色主题"
+        @click="toggleTheme"
+      >
+        <Icon
+          :name="
+            isDark
+              ? 'material-symbols:light-mode-outline'
+              : 'material-symbols:dark-mode-outline'
+          "
+          class="text-[20px]"
+        />
+      </button>
+      <div
+        class="flex h-9 w-9 cursor-pointer items-center justify-center sm:hidden"
+        @click="chooseMenuHandler"
+      >
+        <Icon name="material-symbols:dehaze-rounded" class="text-[22px]" />
+      </div>
     </div>
   </div>
   <van-popup
@@ -34,7 +55,9 @@
     position="right"
     :style="{ width: '70%', height: '100%' }"
   >
-    <div class="w-full h-full p-6 pt-14 flex flex-col gap-6">
+    <div
+      class="flex h-full w-full flex-col gap-6 bg-white p-6 pt-14 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100"
+    >
       <div
         class="w-full"
         v-for="(item, index) in menuList"
@@ -50,7 +73,12 @@
   </van-popup>
 </template>
 <script setup lang="ts">
-const config = useRuntimeConfig()
+const config = useRuntimeConfig();
+
+const isDark = useDark();
+function toggleTheme() {
+  isDark.value = !isDark.value;
+}
 
 const props = defineProps({
   //是否为固定布局
@@ -79,7 +107,7 @@ const showMenuPop = ref(false);
 function chooseMenuHandler() {
   showMenuPop.value = true;
 }
-async function goPage(item) {
+async function goPage(item: { name: string; url: string }) {
   await navigateTo(item.url);
   showMenuPop.value = false;
 }

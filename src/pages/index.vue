@@ -9,10 +9,10 @@
         v-for="item in list"
         :key="String(item.id)"
         :to="`/article/article_${item.id}`"
-        class="flex flex-col gap-2 border-b last:border-none border-[#f1f1f1] pb-10 group cursor-pointer w-full"
+        class="flex flex-col gap-2 border-b last:border-none border-[#f1f1f1] dark:border-[#333] pb-10 group cursor-pointer w-full"
       >
         <div
-          class="text-[22px] text-[#333] font-bold group-hover:text-primary line-clamp-2"
+          class="text-[22px] text-[#333] dark:text-[#999] font-bold group-hover:text-primary line-clamp-2"
         >
           {{ item.title }}
         </div>
@@ -24,7 +24,7 @@
         </div> -->
         <!-- <VditorPreview :content="item.summary ?? ''" /> -->
         <div
-          class="flex justify-between text-[18px] text-[#999] italic font-thin"
+          class="flex justify-between text-[18px] text-[#999] dark:text-[#666] italic font-thin"
         >
           <div>{{ formatMeta(item) }}</div>
         </div>

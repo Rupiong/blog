@@ -75,12 +75,14 @@ const { stop } = useIntersectionObserver(
         </div>
         <div class="w-full mt-[-90px] z-10 flex justify-center">
           <ContentInner>
-            <div class="w-full bg-white lg:rounded-md p-6 lg:p-16">
+            <div
+              class="w-full bg-white p-6 transition-colors dark:bg-zinc-900 lg:rounded-md lg:p-16"
+            >
               <slot />
             </div>
             <div
               v-if="route.meta.showSiderBar"
-              class="w-[300px] h-fit shrink-0 bg-white rounded-md p-10 sticky top-20 hidden lg:block"
+              class="sticky top-20 hidden h-fit w-[300px] shrink-0 rounded-md bg-white p-10 transition-colors dark:bg-zinc-900 lg:block"
             >
               <Siderbar />
             </div>

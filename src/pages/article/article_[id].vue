@@ -53,13 +53,13 @@ watch(
           <div
             v-for="tag in article.tags"
             :key="tag"
-            class="leading-none p-2 rounded-full border text-[12px] bg-white"
+            class="rounded-full border bg-white p-2 text-[12px] leading-none dark:border-zinc-600 dark:bg-zinc-800"
           >
             {{ tag }}
           </div>
         </div>
         <div
-          class="text-[30px] md:text-[52px] font-bold leading-[1.2] text-[#333] mt-4"
+          class="mt-4 text-[30px] font-bold leading-[1.2] text-[#333] dark:text-zinc-100 md:text-[52px]"
         >
           {{ article.title }}
         </div>

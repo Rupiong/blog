@@ -1,13 +1,15 @@
 <template>
-  <div class="flex-1 w-full h-full flex flex-col  gap-6 p-3 bg-white">
+  <div
+    class="flex h-full w-full flex-1 flex-col gap-6 bg-white p-3 transition-colors dark:bg-zinc-900"
+  >
     <NuxtLink
       v-for="item in guestMessages"
       :key="item.id"
       :to="`/message/message_${item.id}`"
-      class="flex w-full gap-4 border-b last:border-none border-[#f1f1f1] pb-10 group cursor-pointer text-left"
+      class="group flex w-full cursor-pointer gap-4 border-b border-[#f1f1f1] pb-10 text-left last:border-none dark:border-zinc-700"
     >
       <div
-        class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full overflow-hidden bg-[#f5f5f5] ring-1 ring-[#eee]"
+        class="h-12 w-12 shrink-0 overflow-hidden rounded-full bg-[#f5f5f5] ring-1 ring-[#eee] md:h-14 md:w-14 dark:bg-zinc-800 dark:ring-zinc-600"
       >
         <img
           class="w-full h-full object-cover"
