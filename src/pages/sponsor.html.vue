@@ -31,16 +31,7 @@
               class="flex flex-col items-center gap-4 rounded-lg bg-[#fafafa] p-6 dark:bg-zinc-800/50"
             >
               <div
-                class="flex items-center gap-2 text-[15px] font-semibold text-[#333] dark:text-zinc-200"
-              >
-                <Icon
-                  name="ic:baseline-wechat"
-                  class="text-[#07c160] text-xl"
-                />
-                微信支付
-              </div>
-              <div
-                class="h-100 w-100 shrink-0 overflow-hidden rounded-md bg-white p-2 ring-1 ring-[#eee] dark:bg-zinc-900 dark:ring-zinc-700"
+                class="h-100 shrink-0 overflow-hidden rounded-md bg-white p-2 ring-1 ring-[#eee] dark:bg-zinc-900 dark:ring-zinc-700"
               >
                 <img
                   :src="wechatQr"
@@ -48,35 +39,20 @@
                   class="w-full h-full object-contain"
                 />
               </div>
-              <p class="text-center text-[12px] text-[#999] dark:text-zinc-500">
-                打开微信扫一扫
-              </p>
             </div>
 
             <div
               class="flex flex-col items-center gap-4 rounded-lg bg-[#fafafa] p-6 dark:bg-zinc-800/50"
             >
               <div
-                class="flex items-center gap-2 text-[15px] font-semibold text-[#333] dark:text-zinc-200"
-              >
-                <Icon
-                  name="simple-icons:alipay"
-                  class="text-[#1677ff] text-xl"
-                />
-                支付宝
-              </div>
-              <div
-                class="h-100 w-100 shrink-0 overflow-hidden rounded-md bg-white p-2 ring-1 ring-[#eee] dark:bg-zinc-900 dark:ring-zinc-700"
+                class="h-100 shrink-0 overflow-hidden rounded-md bg-white p-2 ring-1 ring-[#eee] dark:bg-zinc-900 dark:ring-zinc-700"
               >
                 <img
-                  :src="wechatQr"
+                  :src="alipayQr"
                   alt="支付宝收款码"
                   class="w-full h-full object-contain"
                 />
               </div>
-              <p class="text-center text-[12px] text-[#999] dark:text-zinc-500">
-                打开支付宝扫一扫
-              </p>
             </div>
           </div>
         </section>
@@ -87,9 +63,9 @@
 
 <script setup lang="ts">
 import sponsorBg from "@/assets/images/about_bg.jpg";
-import wechatQr from "@/assets/images/common/wechat.jpg";
+import wechatQr from "@/assets/images/common/wechat_pay.jpg";
 // 替换为你的支付宝收款码图片后，将下一行改为: import alipayQr from "@/assets/images/common/alipay.jpg"
-import alipayQr from "@/assets/images/common/alipay-qrcode-placeholder.svg";
+import alipayQr from "@/assets/images/common/alipay.jpg";
 
 definePageMeta({
   layout: "custom-full",
