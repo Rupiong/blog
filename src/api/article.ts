@@ -77,6 +77,22 @@ export interface PublicArticlesQuery {
   category_ids?: string;
 }
 
+/**
+ * GET `/public/articles/by_year` 查询参数（按公历年份获取该年文章列表）
+ */
+export interface PublicArticlesByYearQuery {
+  /** 公历年份（1970～2100） */
+  year: number;
+  /** 分类筛选：逗号分隔 ID，如 1,2,3 */
+  category_ids?: string;
+}
+
+/** GET `/public/articles/by_year` 响应中单一年份分组 */
+export interface PublicArticlesByYearGroup {
+  year: number;
+  data: ArticleListItem[];
+}
+
 export interface ArticleListResult {
   list: ArticleListItem[];
   total: number;
@@ -245,6 +261,63 @@ export function normalizePublicArticlesList(data: unknown): ArticleListResult {
   }
 
   return { list: [], total: 0 };
+}
+
+const MIN_ARTICLE_YEAR = 1970;
+const MAX_ARTICLE_YEAR = 2100;
+
+function mapByYearGroup(raw: unknown): PublicArticlesByYearGroup | null {
+  if (!raw || typeof raw !== "object") return null;
+  const o = raw as Record<string, unknown>;
+  const year = Number(o.year);
+  if (!Number.isFinite(year) || year < MIN_ARTICLE_YEAR || year > MAX_ARTICLE_YEAR) {
+    return null;
+  }
+  const dataRaw = o.data;
+  const list = Array.isArray(dataRaw) ? dataRaw.map(mapArticleItem) : [];
+  return { year, data: list };
+}
+
+/**
+ * 解析 GET `/public/articles/by_year` 响应：`[{ year, data: [...] }, ...]`
+ * 兼容外层 `{ data: [...] }` 包装。
+ */
+export function normalizePublicArticlesByYear(data: unknown): PublicArticlesByYearGroup[] {
+  const unwrapped = unwrapPayload(data);
+  if (!Array.isArray(unwrapped)) return [];
+  const groups = unwrapped
+    .map(mapByYearGroup)
+    .filter((g): g is PublicArticlesByYearGroup => g != null);
+  groups.sort((a, b) => b.year - a.year);
+  return groups;
+}
+
+function buildPublicArticlesByYearQuery(
+  params: PublicArticlesByYearQuery
+): Record<string, string | number> {
+  const y = Math.trunc(params.year);
+  if (y < MIN_ARTICLE_YEAR || y > MAX_ARTICLE_YEAR) {
+    throw new RangeError(`year must be between ${MIN_ARTICLE_YEAR} and ${MAX_ARTICLE_YEAR}`);
+  }
+  const q: Record<string, string | number> = { year: y };
+  if (params.category_ids != null && params.category_ids !== "") {
+    q.category_ids = params.category_ids;
+  }
+  return q;
+}
+
+/**
+ * 按年份获取公开文章 GET `/public/articles/by_year`（无需登录）
+ */
+export async function fetchPublicArticlesByYear(
+  params: PublicArticlesByYearQuery
+): Promise<PublicArticlesByYearGroup[]> {
+  const api = useApiFetch();
+  const raw = await api<unknown>("/public/articles/by_year", {
+    method: "GET",
+    query: buildPublicArticlesByYearQuery(params),
+  });
+  return normalizePublicArticlesByYear(raw);
 }
 
 function mapArticleDetail(raw: unknown): ArticleDetail {

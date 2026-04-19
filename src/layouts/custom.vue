@@ -17,7 +17,6 @@ const viewport = useViewport();
         </ContentInner>
       </Content>
     </div>
-    <!-- <Footer v-if="viewport.isGreaterOrEquals('md')" class="mt-6" /> -->
   </div>
 </template>
 

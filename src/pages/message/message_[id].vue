@@ -1,35 +1,66 @@
 <script lang="ts" setup>
-import {
-  getGuestMessageById,
-  formatMessageTime,
-} from "@/data/guestMessages";
+import { fetchPublicSiteMessageById } from "@/api/guestMessage";
+import aboutAvatar from "@/assets/images/about_avatar.jpg";
+import { formatMessageTime } from "@/data/guestMessages";
 
 definePageMeta({
   layout: "custom",
 });
 
 const route = useRoute();
-const id = String(route.params.id ?? "");
-const message = getGuestMessageById(id);
 
-if (!message) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: "留言不存在",
-  });
-}
+const { data: messageRow, pending } = await useAsyncData(
+  () => `public-site-message-${String(route.params.id)}`,
+  async () => {
+    const n = Number(route.params.id);
+    if (!Number.isFinite(n) || n <= 0) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: "留言不存在",
+      });
+    }
+    const row = await fetchPublicSiteMessageById(n);
+    if (!row) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: "留言不存在",
+      });
+    }
+    return row;
+  },
+  { watch: [() => route.params.id] },
+);
 
-useHead({
-  title: `${message.userName} 的留言 | copyman blog`,
-  description: message.content.slice(0, 120),
+const message = computed(() => {
+  const row = messageRow.value;
+  if (!row) return null;
+  return {
+    userName: row.guest_name,
+    content: row.content,
+    createdAt: row.created_at,
+    avatar: aboutAvatar,
+  };
 });
+
+useHead(() => ({
+  title: message.value
+    ? `${message.value.userName} 的留言 | copyman blog`
+    : "留言 | copyman blog",
+  meta: [
+    {
+      name: "description",
+      content: message.value?.content.slice(0, 120) ?? "",
+    },
+  ],
+}));
 </script>
 
 <template>
   <div
     class="flex h-full w-full flex-col bg-white transition-colors dark:bg-zinc-900 md:pt-6"
   >
-    <div class="w-full p-6 rounded-[6px]">
+    <div v-if="pending" class="w-full p-6 text-[#999]">加载中…</div>
+    <div v-else-if="message" class="w-full p-6 rounded-[6px]">
       <div class="flex items-start gap-4 border-b border-dashed pb-6">
         <div
           class="h-16 w-16 shrink-0 overflow-hidden rounded-full bg-[#f5f5f5] ring-1 ring-[#eee] md:h-20 md:w-20 dark:bg-zinc-800 dark:ring-zinc-600"

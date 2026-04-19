@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full bg-white dark:bg-black p-6">
     <ContentInner>
-      <div class="flex w-full flex-col items-center justify-center gap-6">
+      <div class="flex w-full flex-col items-center  gap-6">
         <div class="w-full flex flex-col gap-4">
           <div
             class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
@@ -46,9 +46,6 @@
               </select>
             </div>
           </div>
-          <p class="text-[12px] text-[#bbb]">
-            按日期范围筛选依赖后端接口，当前仅支持列表内按发布时间排序。
-          </p>
         </div>
 
         <div v-if="pending" class="py-12 text-[#999]">加载中…</div>
@@ -56,49 +53,36 @@
           {{ error.message || "文章列表加载失败" }}
         </div>
         <template v-else>
-          <NuxtLink
-            v-for="item in sortedList"
-            :key="String(item.id)"
-            :to="`/article/article_${item.id}`"
-            class="group flex w-full cursor-pointer flex-col gap-2 border-b border-[#f1f1f1] pb-10 last:border-none dark:border-[#333]"
-          >
-            <div
-              class="line-clamp-2 text-[22px] font-bold text-[#333] group-hover:text-primary dark:text-[#999]"
-            >
-              {{ item.title }}
-            </div>
-            <div
-              class="flex justify-between text-[18px] font-thin italic text-[#999] dark:text-[#666]"
-            >
-              <div>{{ formatMeta(item) }}</div>
-            </div>
-          </NuxtLink>
-          <div v-if="!sortedList.length" class="py-12 text-[#999]">
-            暂无文章
-          </div>
           <div
-            v-if="totalPages > 1"
-            class="flex w-full items-center justify-center gap-4 pt-4"
+            v-for="group in yearGroups"
+            :key="group.year"
+            class="flex w-full flex-col gap-4"
           >
-            <button
-              type="button"
-              class="rounded border border-[#ddd] px-3 py-1 text-[14px] disabled:opacity-40 dark:border-zinc-600"
-              :disabled="page <= 1"
-              @click="page--"
+            <h2
+              class="border-b border-[#eee] pb-2 text-[28px] font-semibold text-[#333] dark:border-zinc-700 dark:text-zinc-200"
             >
-              上一页
-            </button>
-            <span class="text-[14px] text-[#999]">
-              {{ page }} / {{ totalPages }}
-            </span>
-            <button
-              type="button"
-              class="rounded border border-[#ddd] px-3 py-1 text-[14px] disabled:opacity-40 dark:border-zinc-600"
-              :disabled="page >= totalPages"
-              @click="page++"
+              {{ group.year }} 年
+            </h2>
+            <NuxtLink
+              v-for="item in sortedInYear(group.data)"
+              :key="`${group.year}-${item.id}`"
+              :to="`/article/article_${item.id}`"
+              class="group flex items-center w-full cursor-pointer gap-2 border-b border-dashed border-[#f1f1f1] pb-8 last:border-none dark:border-[#333]"
             >
-              下一页
-            </button>
+              <div
+                class="line-clamp-2 text-[18px] font-bold text-[#333] group-hover:text-primary dark:text-[#999]"
+              >
+                {{ item.title }}
+              </div>
+              <div
+                class="flex justify-between text-[14px] font-thin italic text-[#999] dark:text-[#666]"
+              >
+                <div>{{ formatMeta(item) }}</div>
+              </div>
+            </NuxtLink>
+          </div>
+          <div v-if="!yearGroups.length" class="py-12">
+            <AEmpty description="暂无文章" />
           </div>
         </template>
       </div>
@@ -109,7 +93,7 @@
 <script setup lang="ts">
 import index_bg from "@/assets/images/index_bg.jpeg";
 import {
-  fetchPublicArticleList,
+  fetchPublicArticlesByYear,
   fetchPublicCategories,
   type ArticleListItem,
   type PublicCategoryRecord,
@@ -119,7 +103,7 @@ definePageMeta({
   layout: "custom-full",
   showSiderBar: true,
   title: "文章列表",
-  slogan: "按分类与时间浏览文章",
+  slogan: "按年份与分类浏览文章",
   headerBgUrl: index_bg,
 });
 
@@ -138,9 +122,45 @@ const categoryId = computed(() => {
   return Number.isFinite(n) && n > 0 ? n : undefined;
 });
 
-const page = ref(1);
-const pageSize = ref(20);
 const sortOrder = ref<"desc" | "asc">("desc");
+
+/** 与接口约定一致：并行拉取最近若干公历年，页面按年份分块展示 */
+const ARCHIVE_YEAR_SPAN = 12;
+const MIN_YEAR = 1970;
+
+async function loadArticlesGroupedByYear(): Promise<
+  { year: number; data: ArticleListItem[] }[]
+> {
+  const current = new Date().getFullYear();
+  const years = Array.from({ length: ARCHIVE_YEAR_SPAN }, (_, i) => current - i).filter(
+    (y) => y >= MIN_YEAR,
+  );
+  const category_ids =
+    categoryId.value != null ? String(categoryId.value) : undefined;
+  const chunks = await Promise.all(
+    years.map((year) =>
+      fetchPublicArticlesByYear({
+        year,
+        ...(category_ids ? { category_ids } : {}),
+      }),
+    ),
+  );
+  const byYear = new Map<number, ArticleListItem[]>();
+  for (const groups of chunks) {
+    for (const g of groups) {
+      const cur = byYear.get(g.year) ?? [];
+      byYear.set(g.year, cur.concat(g.data));
+    }
+  }
+  return [...byYear.entries()]
+    .map(([year, data]) => ({ year, data }))
+    .filter((g) => g.data.length > 0)
+    .sort((a, b) => b.year - a.year);
+}
+
+const archiveAsyncKey = computed(
+  () => `public-articles-by-year-${categoryId.value ?? "all"}`,
+);
 
 const { data: categoriesData } = await useAsyncData("public-categories", () =>
   fetchPublicCategories(),
@@ -151,41 +171,21 @@ const categories = computed<PublicCategoryRecord[]>(
 );
 
 const { data, error, pending } = await useAsyncData(
-  "public-articles-articles-page",
-  () =>
-    fetchPublicArticleList({
-      page: page.value,
-      pageSize: pageSize.value,
-      ...(categoryId.value != null
-        ? { category_ids: String(categoryId.value) }
-        : {}),
-    }),
-  { watch: [page, pageSize, categoryId] },
+  archiveAsyncKey,
+  () => loadArticlesGroupedByYear(),
 );
 
-const rawList = computed(() => data.value?.list ?? []);
-const total = computed(() => data.value?.total ?? 0);
+const yearGroups = computed(() => data.value ?? []);
 
-const sortedList = computed(() => {
-  const arr = [...rawList.value];
+function sortedInYear(items: ArticleListItem[]) {
+  const arr = [...items];
   arr.sort((a, b) => {
     const ta = a.created_at || 0;
     const tb = b.created_at || 0;
     return sortOrder.value === "desc" ? tb - ta : ta - tb;
   });
   return arr;
-});
-
-const totalPages = computed(() => {
-  const t = total.value;
-  const ps = pageSize.value;
-  if (t <= 0) return 1;
-  return Math.max(1, Math.ceil(t / ps));
-});
-
-watch(categoryId, () => {
-  page.value = 1;
-});
+}
 
 function setCategory(id: number | undefined) {
   router.replace({

@@ -29,7 +29,9 @@
           <div>{{ formatMeta(item) }}</div>
         </div>
       </NuxtLink>
-      <div v-if="!list.length" class="text-[#999] py-12">暂无文章</div>
+      <div v-if="!list.length" class="py-12">
+        <AEmpty description="暂无文章" />
+      </div>
     </template>
   </div>
 </template>

@@ -49,13 +49,13 @@ watch(
         {{ error.message || "文章加载失败" }}
       </div>
       <template v-else-if="article">
-        <div v-if="article.tags?.length" class="flex flex-wrap items-center gap-2">
+        <div v-if="article.categories?.length" class="flex flex-wrap items-center gap-2">
           <div
-            v-for="tag in article.tags"
+            v-for="tag in article.categories"
             :key="tag"
-            class="rounded-full border bg-white p-2 text-[12px] leading-none dark:border-zinc-600 dark:bg-zinc-800"
+            class="rounded-full border p-2 text-[12px] leading-none dark:border-zinc-600 dark:bg-zinc-800"
           >
-            {{ tag }}
+            {{ tag.name }}
           </div>
         </div>
         <div
@@ -63,12 +63,6 @@ watch(
         >
           {{ article.title }}
         </div>
-        <!-- <div
-          v-if="article.summary"
-          class="text-[22px] md:text-[32px] mt-2 text-[#666]"
-        >
-          {{ article.summary }}
-        </div> -->
         <div
           v-if="metaLine"
           class="italic font-thin text-[18px] mt-2 border-b border-dashed pb-6 text-[#999]"
@@ -83,7 +77,7 @@ watch(
             </template>
           </ClientOnly>
         </div>
-        <!-- <Comment /> -->
+        <ArticleCommentsSection :article-id="String(article.id)" />
       </template>
     </div>
   </div>

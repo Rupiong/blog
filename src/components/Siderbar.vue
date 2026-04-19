@@ -75,25 +75,26 @@
       </div>
       <div v-if="pendingCats" class="text-[12px] text-[#999]">标签加载中…</div>
       <div v-else class="w-full flex flex-row gap-2 flex-wrap">
-        <NuxtLink
-          v-for="c in categories"
-          :key="c.id"
-          :to="{ path: '/articles', query: { category: String(c.id) } }"
-          class="border rounded-full leading-none px-3 py-1 text-[12px] transition hover:border-primary hover:text-primary"
-          :class="
-            isTagActive(c.id)
-              ? 'border-primary text-primary'
-              : 'text-[#999]'
-          "
-        >
-          {{ c.name }}
-        </NuxtLink>
-        <div
-          v-if="!categories.length"
-          class="text-[12px] text-[#999]"
-        >
-          暂无分类
-        </div>
+        <template v-if="categories.length">
+          <NuxtLink
+            v-for="c in categories"
+            :key="c.id"
+            :to="{ path: '/articles', query: { category: String(c.id) } }"
+            class="border rounded-full leading-none px-3 py-1 text-[12px] transition hover:border-primary hover:text-primary"
+            :class="
+              isTagActive(c.id)
+                ? 'border-primary text-primary'
+                : 'text-[#999]'
+            "
+          >
+            {{ c.name }}
+          </NuxtLink>
+        </template>
+        <AEmpty
+          v-else
+          class="!my-2 !py-1 [&_.ant-empty-image]:max-h-14 [&_.ant-empty-image_svg]:max-h-14"
+          description="暂无分类"
+        />
       </div>
     </div>
   </div>
