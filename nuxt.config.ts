@@ -102,6 +102,9 @@ export default defineNuxtConfig({
           content: "黄裕平的个人博客",
         },
       ],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      ],
     },
     pageTransition: false, // 关闭 transition
   },

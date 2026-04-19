@@ -13,7 +13,9 @@
     <div
       class="font-bold text-[18px] active:text-primary sm:hover:text-primary"
     >
-      <NuxtLink to="/">{{ config?.public?.siteTitle }}</NuxtLink>
+      <NuxtLink to="/">
+        <img src="@/assets/images/logo_green.png" alt="logo" class="h-10" />
+      </NuxtLink>
     </div>
     <div class="flex items-center gap-2 sm:gap-3">
       <div class="hidden sm:flex items-center">
