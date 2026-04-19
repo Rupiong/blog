@@ -31,7 +31,7 @@
               </div>
             </template>
             <div
-              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
+              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center active:bg-primary sm:hover:bg-primary cursor-pointer"
             >
               <Icon class="text-white" name="ic:baseline-wechat" />
             </div>
@@ -41,7 +41,7 @@
             target="_blank"
           >
             <div
-              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
+              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center active:bg-primary sm:hover:bg-primary cursor-pointer"
             >
               <Icon class="text-white text-2xl" name="fa6-brands:zhihu" />
             </div>
@@ -49,7 +49,7 @@
 
           <NuxtLink to="https://github.com/Rupiong" target="_blank">
             <div
-              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
+              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center active:bg-primary sm:hover:bg-primary cursor-pointer"
             >
               <Icon class="text-white" name="akar-icons:github-fill" />
             </div>
@@ -59,7 +59,7 @@
               <div class="w-full p-4">83470005@qq.com</div>
             </template>
             <div
-              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center hover:bg-primary cursor-pointer"
+              class="w-10 h-10 bg-[#404040] rounded-full flex items-center justify-center active:bg-primary sm:hover:bg-primary cursor-pointer"
             >
               <Icon class="text-white" name="material-symbols:mail-rounded" />
             </div>
@@ -80,7 +80,7 @@
             v-for="c in categories"
             :key="c.id"
             :to="{ path: '/articles', query: { category: String(c.id) } }"
-            class="border rounded-full leading-none px-3 py-1 text-[12px] transition hover:border-primary hover:text-primary"
+            class="border rounded-full leading-none px-3 py-1 text-[12px] transition active:border-primary active:text-primary sm:hover:border-primary sm:hover:text-primary"
             :class="
               isTagActive(c.id)
                 ? 'border-primary text-primary'

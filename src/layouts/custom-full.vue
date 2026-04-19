@@ -7,7 +7,7 @@ const viewport = useViewport();
     <Header
       key="22"
       :isLucency="false"
-      colorClass="text-black"
+      colorClass="text-black !shadow-none"
       :isFixed="false"
     />
     <div class="w-full flex-1 flex flex-col items-start justify-start">

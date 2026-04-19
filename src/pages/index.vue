@@ -12,13 +12,13 @@
         class="flex flex-col gap-2 border-b last:border-none border-[#f1f1f1] dark:border-[#333] pb-10 group cursor-pointer w-full"
       >
         <div
-          class="text-[22px] text-[#333] dark:text-[#999] font-bold group-hover:text-primary line-clamp-2"
+          class="text-[22px] text-[#333] dark:text-[#999] font-bold group-active:text-primary sm:group-hover:text-primary line-clamp-2"
         >
           {{ item.title }}
         </div>
         <!-- <div
           v-if="item.summary"
-          class="text-[14px] text-[#666] group-hover:underline decoration-solid decoration-[#999] line-clamp-3"
+          class="text-[14px] text-[#666] group-active:underline sm:group-hover:underline decoration-solid decoration-[#999] line-clamp-3"
         >
           {{ item.summary }}
         </div> -->

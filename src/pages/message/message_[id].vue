@@ -90,7 +90,7 @@ useHead(() => ({
       <div class="mt-10 pt-6 border-t border-[#f1f1f1]">
         <NuxtLink
           to="/message"
-          class="text-[14px] text-primary hover:underline"
+          class="text-[14px] text-primary active:underline sm:hover:underline"
         >
           ← 返回留言列表
         </NuxtLink>

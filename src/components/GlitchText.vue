@@ -83,18 +83,28 @@
     'after:content-[""]',
     'after:opacity-0',
     'after:[animation:none]',
-  
-    'hover:before:content-[attr(data-text)]',
-    'hover:before:opacity-100',
-    'hover:before:left-[-10px]',
-    'hover:before:[text-shadow:var(--before-shadow,10px_0_cyan)]',
-    'hover:before:[animation:animate-glitch_var(--before-duration,2s)_infinite_linear_alternate-reverse]',
-  
-    'hover:after:content-[attr(data-text)]',
-    'hover:after:opacity-100',
-    'hover:after:left-[10px]',
-    'hover:after:[text-shadow:var(--after-shadow,-10px_0_red)]',
-    'hover:after:[animation:animate-glitch_var(--after-duration,3s)_infinite_linear_alternate-reverse]'
+
+    'active:before:content-[attr(data-text)]',
+    'sm:hover:before:content-[attr(data-text)]',
+    'active:before:opacity-100',
+    'sm:hover:before:opacity-100',
+    'active:before:left-[-10px]',
+    'sm:hover:before:left-[-10px]',
+    'active:before:[text-shadow:var(--before-shadow,10px_0_cyan)]',
+    'sm:hover:before:[text-shadow:var(--before-shadow,10px_0_cyan)]',
+    'active:before:[animation:animate-glitch_var(--before-duration,2s)_infinite_linear_alternate-reverse]',
+    'sm:hover:before:[animation:animate-glitch_var(--before-duration,2s)_infinite_linear_alternate-reverse]',
+
+    'active:after:content-[attr(data-text)]',
+    'sm:hover:after:content-[attr(data-text)]',
+    'active:after:opacity-100',
+    'sm:hover:after:opacity-100',
+    'active:after:left-[10px]',
+    'sm:hover:after:left-[10px]',
+    'active:after:[text-shadow:var(--after-shadow,-10px_0_red)]',
+    'sm:hover:after:[text-shadow:var(--after-shadow,-10px_0_red)]',
+    'active:after:[animation:animate-glitch_var(--after-duration,3s)_infinite_linear_alternate-reverse]',
+    'sm:hover:after:[animation:animate-glitch_var(--after-duration,3s)_infinite_linear_alternate-reverse]'
   ];
   
   const computedClasses = computed(() => {

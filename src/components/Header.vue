@@ -10,7 +10,9 @@
       !props.isLucency ? 'dark:text-zinc-100' : '',
     ]"
   >
-    <div class="font-bold text-[18px] hover:text-primary">
+    <div
+      class="font-bold text-[18px] active:text-primary sm:hover:text-primary"
+    >
       <NuxtLink to="/">{{ config?.public?.siteTitle }}</NuxtLink>
     </div>
     <div class="flex items-center gap-2 sm:gap-3">
@@ -21,9 +23,23 @@
           </div>
         </div>
       </div>
+      <NuxtLink
+        to="https://github.com/Rupiong"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition active:bg-black/5 dark:active:bg-white/10 sm:hover:bg-black/5 sm:dark:hover:bg-white/10"
+        :class="
+          props.isLucency
+            ? 'text-white'
+            : 'text-zinc-800 dark:text-zinc-200'
+        "
+        aria-label="在 GitHub 上查看"
+      >
+        <Icon name="akar-icons:github-fill" class="text-[20px]" />
+      </NuxtLink>
       <button
         type="button"
-        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full  transition hover:bg-black/5 dark:hover:bg-white/10"
+        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition active:bg-black/5 dark:active:bg-white/10 sm:hover:bg-black/5 sm:dark:hover:bg-white/10"
         :class="
           props.isLucency
             ? 'text-white'
@@ -98,6 +114,7 @@ const props = defineProps({
 });
 
 const menuList = ref([
+  { name: "首页", url: "/" },
   { name: "文章列表", url: "/articles" },
   { name: "关于我", url: "/about.html" },
   { name: "留言", url: "/message" },

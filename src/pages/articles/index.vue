@@ -14,7 +14,7 @@
                 :class="
                   categoryId == null
                     ? 'border-primary text-primary'
-                    : 'border-[#ddd] text-[#999] hover:border-primary hover:text-primary dark:border-zinc-600'
+                    : 'border-[#ddd] text-[#999] active:border-primary active:text-primary sm:hover:border-primary sm:hover:text-primary dark:border-zinc-600'
                 "
                 @click="setCategory(undefined)"
               >
@@ -28,7 +28,7 @@
                 :class="
                   categoryId === c.id
                     ? 'border-primary text-primary'
-                    : 'border-[#ddd] text-[#999] hover:border-primary hover:text-primary dark:border-zinc-600'
+                    : 'border-[#ddd] text-[#999] active:border-primary active:text-primary sm:hover:border-primary sm:hover:text-primary dark:border-zinc-600'
                 "
                 @click="setCategory(c.id)"
               >
@@ -70,7 +70,7 @@
               class="group flex items-center w-full cursor-pointer gap-2 border-b border-dashed border-[#f1f1f1] pb-8 last:border-none dark:border-[#333]"
             >
               <div
-                class="line-clamp-2 text-[18px] font-bold text-[#333] group-hover:text-primary dark:text-[#999]"
+                class="line-clamp-2 text-[18px] font-bold text-[#333] group-active:text-primary sm:group-hover:text-primary dark:text-[#999]"
               >
                 {{ item.title }}
               </div>

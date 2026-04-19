@@ -42,7 +42,7 @@
         </div>
       </template>
       <div v-else class="py-8">
-        <AEmpty class="w-fit" description="暂无留言，来当第一个吧。" />
+        <AEmpty class="text-center md:w-fit" description="暂无留言，来当第一个吧。" />
       </div>
 
       <div

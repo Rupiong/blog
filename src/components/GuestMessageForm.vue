@@ -32,7 +32,7 @@
           name="userName"
           maxlength="32"
           autocomplete="nickname"
-          placeholder="怎么称呼你"
+          placeholder="请输入昵称"
           class="w-full rounded-lg border border-[#e8e8e8] bg-white px-4 py-2.5 text-[14px] text-[#333] outline-none transition placeholder:text-[#bbb] focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-zinc-600 dark:bg-zinc-800/80 dark:text-zinc-100 dark:placeholder:text-zinc-500"
         />
       </div>
@@ -51,12 +51,12 @@
             name="email"
             maxlength="128"
             autocomplete="email"
-            placeholder="用于接收通知（不会公开展示）"
+            placeholder="请输入邮箱"
             class="w-full flex-1 rounded-lg border border-[#e8e8e8] bg-white px-4 py-2.5 text-[14px] text-[#333] outline-none transition placeholder:text-[#bbb] focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-zinc-600 dark:bg-zinc-800/80 dark:text-zinc-100 dark:placeholder:text-zinc-500"
           />
           <button
             type="button"
-            class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#e8e8e8] bg-[#fafafa] px-4 py-2.5 text-[13px] font-medium text-[#333] transition hover:bg-[#f0f0f0] disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
+            class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#e8e8e8] bg-[#fafafa] px-4 py-2.5 text-[13px] font-medium text-[#333] transition active:bg-[#f0f0f0] sm:hover:bg-[#f0f0f0] disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-200 dark:active:bg-zinc-700 sm:dark:hover:bg-zinc-700"
             :disabled="!emailLooksValid || sendCodeCooldown > 0"
             @click="openCaptchaModal"
           >
@@ -83,7 +83,7 @@
           maxlength="12"
           autocomplete="one-time-code"
           inputmode="numeric"
-          placeholder="请先通过上方按钮获取验证码"
+          placeholder="请输入邮箱验证码"
           class="w-full rounded-lg border border-[#e8e8e8] bg-white px-4 py-2.5 text-[14px] text-[#333] outline-none transition placeholder:text-[#bbb] focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-zinc-600 dark:bg-zinc-800/80 dark:text-zinc-100 dark:placeholder:text-zinc-500"
         />
       </div>
@@ -112,7 +112,7 @@
       <div class="flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          class="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-lg bg-primary px-6 text-[14px] font-medium text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          class="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-lg bg-primary px-6 text-[14px] font-medium text-white transition active:opacity-90 sm:hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
           :disabled="submitting || !canSubmit"
         >
           <span
@@ -122,9 +122,9 @@
           />
           <span>{{ submitting ? "提交中…" : "提交留言" }}</span>
         </button>
-        <p class="text-[12px] text-[#999] dark:text-zinc-500">
+        <!-- <p class="text-[12px] text-[#999] dark:text-zinc-500">
           {{ footerHint }}
-        </p>
+        </p> -->
       </div>
     </form>
 

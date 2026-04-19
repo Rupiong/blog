@@ -650,7 +650,7 @@ const _inlineRuntimeConfig = {
   },
   "public": {
     "apiUrl": "http://localhost:9000/v1",
-    "siteTitle": "COPYMAN",
+    "siteTitle": "Copyman",
     "vcalendar": ""
   }
 };

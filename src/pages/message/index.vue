@@ -35,14 +35,14 @@
               class="flex flex-wrap items-baseline justify-between gap-2 text-[14px] text-[#999] italic font-thin"
             >
               <span
-                class="text-[#333] not-italic font-bold group-hover:text-primary transition-colors"
+                class="text-[#333] not-italic font-bold group-active:text-primary sm:group-hover:text-primary transition-colors"
               >
                 {{ item.userName }}
               </span>
               <span>{{ formatMessageTime(item.createdAt) }}</span>
             </div>
             <div
-              class="text-[14px] text-[#666] group-hover:underline decoration-solid decoration-[#999] line-clamp-3 leading-relaxed"
+              class="text-[14px] text-[#666] group-active:underline sm:group-hover:underline decoration-solid decoration-[#999] line-clamp-3 leading-relaxed"
             >
               {{ item.content }}
             </div>
