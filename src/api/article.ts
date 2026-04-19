@@ -8,6 +8,16 @@ export interface ArticleCategory {
   sort: number;
 }
 
+/** GET `/public/categories` 单条分类 */
+export interface PublicCategoryRecord {
+  created_at: number;
+  icon: string;
+  id: number;
+  name: string;
+  sort: number;
+  updated_at: number;
+}
+
 /** GET `/public/articles` 响应中的作者 */
 export interface ArticleUser {
   email: string;
@@ -72,6 +82,29 @@ export interface ArticleListResult {
   total: number;
   page?: number;
   pageSize?: number;
+}
+
+function mapPublicCategory(raw: unknown): PublicCategoryRecord {
+  const o = raw && typeof raw === "object" ? (raw as Record<string, unknown>) : {};
+  return {
+    created_at: Number(o.created_at) || 0,
+    icon: String(o.icon ?? ""),
+    id: Number(o.id) || 0,
+    name: String(o.name ?? ""),
+    sort: Number(o.sort) || 0,
+    updated_at: Number(o.updated_at) || 0,
+  };
+}
+
+/**
+ * 兼容数组或 `{ data: [] }` 等包装结构。
+ */
+export function normalizePublicCategories(data: unknown): PublicCategoryRecord[] {
+  const root = unwrapPayload(data);
+  if (Array.isArray(root)) {
+    return root.map(mapPublicCategory).sort((a, b) => a.sort - b.sort || a.id - b.id);
+  }
+  return [];
 }
 
 function asCategoryArray(raw: unknown): ArticleCategory[] {
@@ -249,6 +282,17 @@ function buildPublicArticlesQuery(
   if (params.category_ids != null && params.category_ids !== "")
     q.category_ids = params.category_ids;
   return q;
+}
+
+/**
+ * 公开分类列表 GET `/public/categories`（无需登录）
+ */
+export async function fetchPublicCategories(): Promise<PublicCategoryRecord[]> {
+  const api = useApiFetch();
+  const raw = await api<unknown>("/public/categories", {
+    method: "GET",
+  });
+  return normalizePublicCategories(raw);
 }
 
 /**

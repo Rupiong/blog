@@ -73,29 +73,48 @@
       >
         FEATURED TAGS
       </div>
-      <div class="w-full flex flex-row gap-2 flex-wrap">
-        <div
-          class="border rounded-full leading-none px-3 py-1 text-[12px] text-[#999]"
+      <div v-if="pendingCats" class="text-[12px] text-[#999]">标签加载中…</div>
+      <div v-else class="w-full flex flex-row gap-2 flex-wrap">
+        <NuxtLink
+          v-for="c in categories"
+          :key="c.id"
+          :to="{ path: '/articles', query: { category: String(c.id) } }"
+          class="border rounded-full leading-none px-3 py-1 text-[12px] transition hover:border-primary hover:text-primary"
+          :class="
+            isTagActive(c.id)
+              ? 'border-primary text-primary'
+              : 'text-[#999]'
+          "
         >
-          知乎
-        </div>
+          {{ c.name }}
+        </NuxtLink>
         <div
-          class="border rounded-full leading-none px-3 py-1 text-[12px] text-[#999]"
+          v-if="!categories.length"
+          class="text-[12px] text-[#999]"
         >
-          笔记
-        </div>
-        <div
-          class="border rounded-full leading-none px-3 py-1 text-[12px] text-[#999]"
-        >
-          UX/UI
-        </div>
-        <div
-          class="border rounded-full leading-none px-3 py-1 text-[12px] text-[#999]"
-        >
-          计算计理论
+          暂无分类
         </div>
       </div>
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { fetchPublicCategories, type PublicCategoryRecord } from "@/api/article";
+
+const route = useRoute();
+
+const { data: categoriesData, pending: pendingCats } = await useAsyncData(
+  "public-categories",
+  () => fetchPublicCategories(),
+);
+
+const categories = computed<PublicCategoryRecord[]>(
+  () => categoriesData.value ?? [],
+);
+
+function isTagActive(id: number) {
+  const q = route.query.category;
+  const raw = Array.isArray(q) ? q[0] : q;
+  return String(id) === String(raw ?? "");
+}
+</script>
