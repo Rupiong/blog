@@ -21,7 +21,8 @@ export function useApiFetch(): ApiFetchFn {
   if (existing) return existing;
 
   const config = useRuntimeConfig();
-  const baseURL = normalizeBaseURL(config.public.apiUrl as string | undefined);
+  // 浏览器与 SSR 均走 /basic-api，由 devProxy（开发）或 routeRules.proxy（生产）转发到真实 API
+  const baseURL = normalizeBaseURL(config.public.apiUrl)
   const inner = $fetch.create({
     baseURL,
     timeout: 30_000,

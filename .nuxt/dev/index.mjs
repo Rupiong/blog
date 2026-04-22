@@ -636,6 +636,22 @@ const _inlineRuntimeConfig = {
       "/__nuxt_error": {
         "cache": false
       },
+      "/basic-api/**": {
+        "cors": true,
+        "proxy": {
+          "to": "http://www.copyman.top:9000/v1/**",
+          "_proxyStripBase": "/basic-api"
+        },
+        "headers": {
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "*",
+          "access-control-allow-headers": "*",
+          "access-control-max-age": "0",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization"
+        }
+      },
       "/static/builds/meta/**": {
         "headers": {
           "cache-control": "public, max-age=31536000, immutable"
@@ -649,7 +665,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "apiUrl": "http://localhost:9000/v1",
+    "apiUrl": "/basic-api",
     "siteTitle": "Copyman",
     "vcalendar": ""
   }

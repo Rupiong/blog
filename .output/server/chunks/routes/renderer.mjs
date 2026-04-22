@@ -76,7 +76,7 @@ function createHead(options = {}) {
 
 const NUXT_RUNTIME_PAYLOAD_EXTRACTION = false;
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width,initial-scale=1,minimum-scale=1"},{"charset":"utf-8"},{"name":"description","content":"黄裕平的个人博客"}],"link":[],"style":[],"script":[],"noscript":[],"charset":"utf-8","viewport":"width=device-width,initial-scale=1,minimum-scale=1","title":"copyman blog"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width,initial-scale=1,minimum-scale=1"},{"charset":"utf-8"},{"name":"description","content":"黄裕平的个人博客"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[],"noscript":[],"charset":"utf-8","viewport":"width=device-width,initial-scale=1,minimum-scale=1","title":"copyman blog"};
 
 const appRootTag = "div";
 
@@ -276,7 +276,7 @@ async function renderInlineStyles(usedModules) {
 
 const renderSSRHeadOptions = {"omitLineBreaks":false};
 
-const entryIds = ["../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logg_cb58c00fe4efe47945cd37df6649bfcf/node_modules/nuxt/dist/app/entry.js"];
+const entryIds = ["../node_modules/.pnpm/nuxt@3.21.2_@parcel+watcher@2.5.6_@types+node@25.6.0_@vitejs+devtools@0.1.11_@pnpm+logger@100_5kz2iknqbxsiiqqhb6fntiwvmq/node_modules/nuxt/dist/app/entry.js"];
 
 // @ts-expect-error private property consumed by vite-generated url helpers
 globalThis.__buildAssetsURL = buildAssetsURL;

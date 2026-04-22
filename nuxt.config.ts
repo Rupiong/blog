@@ -1,5 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 require("dotenv").config();
+
+/** Nitro routeRules.proxy：仅当 target 以 `/**` 结尾时才会 strip `/basic-api` 并把剩余路径拼到上游，否则不会转发 path（见 nitro 内 proxy 分支）。 */
+function nitroApiProxyTarget(): string {
+  const base = (process.env.GLOB_API_URL || "").replace(/\/$/, "");
+  if (!base) {
+    throw new Error(
+      "GLOB_API_URL 未设置：请在 .env / .env.production 或构建环境中配置后端根地址（如 http://host:9000/v1）",
+    );
+  }
+  return `${base}/**`;
+}
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: "src",
@@ -111,12 +123,25 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // 对客户端暴露的公共密钥
     public: {
-      apiUrl: process.env.GLOB_API_URL,
+      // 开发与生产均走同源 /basic-api，由 nitro.routeRules / devProxy 转发到 GLOB_API_URL，避免客户端导航时直连后端触发 CORS
+      apiUrl: "/basic-api",
       siteTitle: process.env.NUXT_SITE_TITLE_SHORT,
     },
   },
+
   //跨域处理
   nitro: {
+    routeRules: {
+      "/basic-api/**": {
+        cors: true,
+        proxy: nitroApiProxyTarget(),
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        }
+      },
+    },
     devProxy: {
       "/basic-api": {
         target: process.env.GLOB_API_URL,
