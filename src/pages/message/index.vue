@@ -50,7 +50,7 @@
         </NuxtLink>
         </template>
         <div v-else class="py-12">
-          <AEmpty description="暂无留言，来当第一个吧。" />
+          <CustomEmpty type="message" description="暂无留言，来当第一个吧。" />
         </div>
 
         <div

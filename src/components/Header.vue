@@ -14,7 +14,8 @@
       class="font-bold text-[18px] active:text-primary sm:hover:text-primary"
     >
       <NuxtLink to="/">
-        <img src="@/assets/images/logo_green.png" alt="logo" class="h-10" />
+        <img v-if="!props.isLucency" src="@/assets/images/logo_copyman.png" alt="logo" class="h-12" />
+        <img v-else src="@/assets/images/logo_copyman_tran.png" alt="logo" class="h-12" />
       </NuxtLink>
     </div>
     <div class="flex items-center gap-2 sm:gap-3">

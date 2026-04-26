@@ -106,7 +106,8 @@ export default defineNuxtConfig({
     buildAssetsDir: "static",
     head: {
       charset: "utf-8",
-      viewport: "width=device-width,initial-scale=1,minimum-scale=1",
+      viewport:
+        "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
       title: "copyman blog",
       meta: [
         {
@@ -115,7 +116,8 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
+        { rel: "shortcut icon", type: "image/png", href: "/favicon.png" },
       ],
     },
     pageTransition: false, // 关闭 transition

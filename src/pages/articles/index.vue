@@ -82,7 +82,7 @@
             </NuxtLink>
           </div>
           <div v-if="!yearGroups.length" class="py-12">
-            <AEmpty description="暂无文章" />
+            <CustomEmpty type="default" description="暂无文章" />
           </div>
         </template>
       </div>

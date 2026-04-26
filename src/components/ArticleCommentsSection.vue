@@ -41,8 +41,12 @@
           </div>
         </div>
       </template>
-      <div v-else class="py-8">
-        <AEmpty class="text-center md:w-fit" description="暂无留言，来当第一个吧。" />
+      <div v-else class="flex justify-center py-8 md:justify-start">
+        <CustomEmpty
+          type="article"
+          class="md:w-fit"
+          description="暂无留言，来当第一个吧。"
+        />
       </div>
 
       <div

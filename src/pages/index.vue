@@ -18,11 +18,11 @@
         </div>
         <!-- <div
           v-if="item.summary"
-          class="text-[14px] text-[#666] group-active:underline sm:group-hover:underline decoration-solid decoration-[#999] line-clamp-3"
+          class="text-[14px] text-[#999] group-active:underline sm:group-hover:underline decoration-solid decoration-[#999] line-clamp-3"
         >
           {{ item.summary }}
         </div> -->
-        <!-- <VditorPreview :content="item.summary ?? ''" /> -->
+        <VditorPreview class="text-[14px] !overflow-hidden !text-[#999] group-active:underline sm:group-hover:underline decoration-solid decoration-[#999] line-clamp-3" :content="item.summary ?? ''" />
         <div
           class="flex justify-between text-[18px] text-[#999] dark:text-[#666] italic font-thin"
         >
@@ -30,7 +30,7 @@
         </div>
       </NuxtLink>
       <div v-if="!list.length" class="py-12">
-        <AEmpty description="暂无文章" />
+        <CustomEmpty type="default" description="暂无文章" />
       </div>
     </template>
   </div>
