@@ -67,7 +67,7 @@
               v-for="item in sortedInYear(group.data)"
               :key="`${group.year}-${item.id}`"
               :to="`/article/article_${item.id}`"
-              class="group flex items-center w-full cursor-pointer gap-2 border-b border-dashed border-[#f1f1f1] pb-8 last:border-none dark:border-[#333]"
+              class="group flex flex-col sm:flex-row  sm:items-center w-full cursor-pointer gap-2 border-b border-dashed border-[#f1f1f1] pb-8 last:border-none dark:border-[#333]"
             >
               <div
                 class="flex-1 line-clamp-2 text-[18px] font-bold text-[#333] group-active:text-primary sm:group-hover:text-primary dark:text-[#999]"
