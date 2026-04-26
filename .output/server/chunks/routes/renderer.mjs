@@ -76,7 +76,7 @@ function createHead(options = {}) {
 
 const NUXT_RUNTIME_PAYLOAD_EXTRACTION = false;
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width,initial-scale=1,minimum-scale=1"},{"charset":"utf-8"},{"name":"description","content":"黄裕平的个人博客"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[],"noscript":[],"charset":"utf-8","viewport":"width=device-width,initial-scale=1,minimum-scale=1","title":"copyman blog"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"},{"charset":"utf-8"},{"name":"description","content":"黄裕平的个人博客"}],"link":[{"rel":"icon","type":"image/png","href":"/favicon.png"},{"rel":"shortcut icon","type":"image/png","href":"/favicon.png"}],"style":[],"script":[],"noscript":[],"charset":"utf-8","viewport":"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no","title":"copyman blog"};
 
 const appRootTag = "div";
 
