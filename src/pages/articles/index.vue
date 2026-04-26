@@ -70,7 +70,7 @@
               class="group flex items-center w-full cursor-pointer gap-2 border-b border-dashed border-[#f1f1f1] pb-8 last:border-none dark:border-[#333]"
             >
               <div
-                class="line-clamp-2 text-[18px] font-bold text-[#333] group-active:text-primary sm:group-hover:text-primary dark:text-[#999]"
+                class="flex-1 line-clamp-2 text-[18px] font-bold text-[#333] group-active:text-primary sm:group-hover:text-primary dark:text-[#999]"
               >
                 {{ item.title }}
               </div>
