@@ -1,8 +1,5 @@
 node_modules
 
 .output
-.output/*
 .nuxt
-.nuxt/*
 .pnpm-store
-.pnpm-store/*
