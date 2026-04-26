@@ -1,13 +1,13 @@
 <template>
   <div
-    class="relative flex h-full w-full flex-col gap-10 bg-white transition-colors dark:bg-zinc-900"
+    class="relative flex h-full w-full flex-col gap-10 bg-white transition-colors dark:bg-zinc-900 pb-10"
   >
     <div
       class="mx-auto flex h-full max-w-[1200px] items-center text-black transition-colors dark:text-zinc-100"
     >
       <div class="w-full justify-end flex gap-4 p-6">
         <div class="w-full md:w-3/4 text-lg flex flex-col">
-          <div class="text-[48px] font-bold leading-[1.2]">Hi, I’m Huang Yuping ✨</div>
+          <div class="text-[48px] font-bold leading-[1]">Hi, I’m Huang Yuping ✨</div>
           <div class="mt-6 md:mt-14 flex flex-col gap-4">
             <div>
               I’m a senior front-end engineer based in Xiamen. Most of my
@@ -30,7 +30,7 @@
               park 🌳, and sometimes gaming 🎮 to unwind.
             </div>
           </div>
-          <div class="mt-6 md:mt-14 text-[#ccc] text-[15px]">
+          <div class="mt-6 md:mt-14 text-[#666] dark:text-[#ccc] text-[15px] leading-[1.5]">
             <div>
               你好，我是黄裕平，👨‍💻 我是一名前端开发工程师，常驻厦门。日常工作以 H5 为主，更偏向
               用户端 场景；在 UI 与交互

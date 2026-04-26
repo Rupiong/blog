@@ -72,10 +72,10 @@
     v-model:show="showMenuPop"
     closeable
     position="right"
-    :style="{ width: '70%', height: '100%' }"
+    :style="{ width: '70%', height: '100%', opacity: 0.9 }"
   >
     <div
-      class="flex h-full w-full flex-col gap-6 bg-white p-6 pt-14 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100"
+      class="flex h-full w-full flex-col gap-6 bg-white p-6 pt-20 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100"
     >
       <div
         class="w-full"
@@ -84,17 +84,20 @@
         @click="goPage(item)"
       >
         <div class="w-full flex items-center justify-between">
-          <div>{{ item.name }}</div>
-          <Icon name="ep:arrow-right" />
+          <div class="text-sm">{{ item.name }}</div>
+          <Icon name="ep:arrow-right" class="text-xs" />
         </div>
       </div>
     </div>
   </van-popup>
 </template>
 <script setup lang="ts">
-const config = useRuntimeConfig();
+import themeSetting from "@/setting/theme";
 
-const isDark = useDark();
+const isDark = useDark({
+  initialValue: themeSetting.theme,
+});
+
 function toggleTheme() {
   isDark.value = !isDark.value;
 }

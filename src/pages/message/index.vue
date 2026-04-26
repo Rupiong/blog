@@ -83,7 +83,7 @@ import {
 } from "@/api/guestMessage";
 import message_bg from "@/assets/images/index_bg.jpeg";
 import defaultGuestAvatar from "@/assets/images/about_avatar.jpg";
-import { formatMessageTime } from "@/data/guestMessages";
+import { formatMessageTime } from "@/utils";
 
 const guestMessagePageSize = 10;
 const currentPage = ref(1);

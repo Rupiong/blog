@@ -6,12 +6,6 @@ const { $onReachBottom } = useNuxtApp();
 $onReachBottom(() => {
   console.log("到达底部");
 });
-
-const viewport = useViewport();
-// watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
-//   console.log('Breakpoint updated:', oldBreakpoint, '->', newBreakpoint)
-// })
-
 const route = useRoute();
 
 const headerBgRef = ref(null);
@@ -29,6 +23,7 @@ const { stop } = useIntersectionObserver(
   },
   { threshold: 0 },
 );
+
 </script>
 
 <template>
@@ -69,7 +64,7 @@ const { stop } = useIntersectionObserver(
           </div>
 
           <img
-            class="header-bg-img w-full h-full absolute object-cover scale-110"
+            class="w-full h-full absolute object-cover scale-110 brightness-[0.7] dark:brightness-[0.5]"
             :src="route.meta.headerBgUrl"
           />
         </div>

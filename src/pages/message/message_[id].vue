@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { fetchPublicSiteMessageById } from "@/api/guestMessage";
 import aboutAvatar from "@/assets/images/about_avatar.jpg";
-import { formatMessageTime } from "@/data/guestMessages";
+import { formatMessageTime } from "@/utils";
 
 definePageMeta({
   layout: "custom",

@@ -7,12 +7,30 @@
         ABOUT ME
       </div>
       <div class="w-full flex flex-col gap-2">
-        <div class="w-full h-[220px] bg-[#ccc] rounded-md overflow-hidden">
-          <img
+        <!-- <div class="w-full h-[220px] bg-[#ccc] rounded-md overflow-hidden"> -->
+          <!-- <img
             class="w-full h-full object-cover"
             src="@/assets/images/about_avatar.jpg"
-          />
-        </div>
+          /> -->
+          <TiltedCard
+          :image-src="about_avatar"
+          alt-text="Sample image"
+          caption-text="I'm Copyman"
+          container-height="220px"
+          container-width="220px"
+          image-height="200px"
+          image-width="200px"
+          :rotate-amplitude="15"
+          :scale-on-hover="1"
+          :show-mobile-warning="true"
+          :show-tooltip="true"
+          :display-overlay-content="false"
+        >
+          <template #overlay>
+            <div class="overlay-content">I'm Copyman</div>
+          </template>
+        </TiltedCard>
+        <!-- </div> -->
         <div class="flex items-center justify-between gap-2">
           <span class="text-[18px] font-bold text-[#333]">@Copyman</span>
           <span class="text-[14px] text-[#666]">前端开发工程师</span>
@@ -82,9 +100,7 @@
             :to="{ path: '/articles', query: { category: String(c.id) } }"
             class="border rounded-full leading-none px-3 py-1 text-[12px] transition active:border-primary active:text-primary sm:hover:border-primary sm:hover:text-primary"
             :class="
-              isTagActive(c.id)
-                ? 'border-primary text-primary'
-                : 'text-[#999]'
+              isTagActive(c.id) ? 'border-primary text-primary' : 'text-[#999]'
             "
           >
             {{ c.name }}
@@ -97,10 +113,45 @@
         />
       </div>
     </div>
+    <div class="w-full flex flex-col gap-2">
+      <div
+        class="font-thin text-[16px] text-[#999] leading-none border-b border-dashed pb-2 mb-2"
+      >
+        FRIEND LINKS
+      </div>
+      <div class="w-full flex flex-col gap-2">
+        <NuxtLink
+          to="https://www.ruanyifeng.com/blog/"
+          target="_blank"
+          class="text-[14px] text-[#666] break-all transition active:text-primary sm:hover:text-primary"
+        >
+          阮一峰的网络日志
+        </NuxtLink>
+        <NuxtLink
+          to="https://sinyalee.com/blog/"
+          target="_blank"
+          class="text-[14px] text-[#666] break-all transition active:text-primary sm:hover:text-primary"
+        >
+          新的原野
+        </NuxtLink>
+        <NuxtLink
+          to="https://antfu.me/"
+          target="_blank"
+          class="text-[14px] text-[#666] break-all transition active:text-primary sm:hover:text-primary"
+        >
+          Anthony Fu
+        </NuxtLink>
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
-import { fetchPublicCategories, type PublicCategoryRecord } from "@/api/article";
+import about_avatar from "@/assets/images/about_avatar.jpg";
+import TiltedCard from "./TiltedCard.vue";
+import {
+  fetchPublicCategories,
+  type PublicCategoryRecord,
+} from "@/api/article";
 
 const route = useRoute();
 

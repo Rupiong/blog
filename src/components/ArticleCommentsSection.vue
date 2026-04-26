@@ -80,7 +80,7 @@ import {
   postPublicArticleComment,
   type PostPublicSiteMessageBody,
 } from "@/api/guestMessage";
-import { formatMessageTime } from "@/data/guestMessages";
+import { formatMessageTime } from "@/utils";
 
 const props = defineProps<{
   articleId: string;
