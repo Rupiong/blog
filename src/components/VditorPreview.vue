@@ -42,12 +42,12 @@ async function renderMarkdown() {
   const token = ++previewToken;
   const Vditor = (await import("vditor")).default;
 
-  await import("vditor/dist/index.css");
+  // await import("vditor/dist/index.css");
   if (token !== previewToken) return;
   el.innerHTML = "";
   await Vditor.preview(el, md, {
-    theme: { current: "light" },
-    hljs: { style: "github" },
+    theme: { current: document.documentElement.classList.contains('dark') ? 'dark' : 'light' },
+    hljs: { style: "native" },
     mode: "light",
   });
 }

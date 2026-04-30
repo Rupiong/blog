@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     "nuxt-viewport",
     "@nuxt/icon",
   ],
+  css: ["vditor/dist/index.css"],
   viewport: {
     /* Viewport options */
     breakpoints: {
