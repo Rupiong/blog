@@ -3,13 +3,13 @@
 
 <template>
   <div
-    class="w-full h-fit bg-[#f5f5f5] text-neutral-900 transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100"
+    class="w-full min-h-full h-fit flex flex-col bg-[#f5f5f5] text-neutral-900 transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100"
   >
-    <NuxtLayout class="w-full h-full">
+    <NuxtLayout class="w-full flex-1 h-full flex flex-col">
       <!--  在页面导航上显示进度条	-->
       <NuxtLoadingIndicator />
       <NuxtPage />
-      <van-back-top />
+      <van-back-top z-index="99" class="z-99 !bg-primary"/>
     </NuxtLayout>
   </div>
 </template>

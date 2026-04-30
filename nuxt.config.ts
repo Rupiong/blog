@@ -53,7 +53,7 @@ export default defineNuxtConfig({
       theme: {
         extend: {
           colors: {
-            primary: "#00DC82 ",
+            primary: "#00DC82",
             secondary: "#69B9F1",
             success: "#1EB11C",
             error: "#E71609",

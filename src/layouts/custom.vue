@@ -8,9 +8,8 @@ const viewport = useViewport();
       key="22"
       :isLucency="false"
       colorClass="text-black"
-      :isFixed="false"
     />
-    <div class="w-full flex-1 flex flex-col items-start justify-start ">
+    <div class="w-full flex-1 flex flex-col items-start justify-start pt-20">
       <Content>
         <ContentInner>
           <slot />

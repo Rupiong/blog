@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex h-full w-full justify-center bg-white transition-colors dark:bg-zinc-900"
+    class="flex flex-1 h-full w-full justify-center bg-white transition-colors dark:bg-zinc-900"
   >
     <ContentInner class="">
       <div

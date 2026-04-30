@@ -1,9 +1,9 @@
 <template>
   <div
-    class="relative flex h-full w-full flex-col gap-10 bg-white transition-colors dark:bg-zinc-900 pb-10"
+    class="flex-1 relative flex h-full w-full flex-col items-start justify-start gap-10 bg-white transition-colors dark:bg-zinc-900 pb-10"
   >
     <div
-      class="mx-auto flex h-full max-w-[1200px] items-center text-black transition-colors dark:text-zinc-100"
+      class="mx-auto flex flex-1 h-full max-w-[1200px] items-center text-black transition-colors dark:text-zinc-100"
     >
       <div class="w-full justify-end flex gap-4 p-6">
         <div class="w-full md:w-3/4 text-lg flex flex-col">
