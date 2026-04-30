@@ -16,12 +16,13 @@ Copyman Blog 是一个响应式个人博客项目，采用 Vue 3 + Nuxt 3 技术
 
 ## 技术栈
 
-- [Nuxt 3](https://nuxt.com/)：应用框架（SSR/SSG/同构能力）
+- [Nuxt 4](https://nuxt.com/)：应用框架（SSR/SSG/同构能力）
 - [Vue 3](https://cn.vuejs.org/)：前端 UI 框架
 - [TypeScript](https://www.typescriptlang.org/)：类型系统支持
 - [Pinia](https://pinia.vuejs.org/)：状态管理
 - [Tailwind CSS](https://tailwindcss.com/)：原子化样式方案
 - [VueUse](https://vueuse.org/)：组合式工具库
+- [Nuxt Icon](https://github.com/nuxt/icon)：图标组件与自动图标集支持
 
 ## 主要特性
 
@@ -32,7 +33,7 @@ Copyman Blog 是一个响应式个人博客项目，采用 Vue 3 + Nuxt 3 技术
 
 ## 环境要求
 
-- [Node.js](https://nodejs.org/) 18 及以上（建议使用 LTS 版本）
+- [Node.js](https://nodejs.org/) 20 及以上（建议使用 LTS 版本）
 - [pnpm](https://pnpm.io/) 8 及以上
 - [Git](https://git-scm.com/)
 
@@ -71,6 +72,9 @@ pnpm preview
 - `pnpm dev`：启动本地开发服务
 - `pnpm build`：构建生产版本
 - `pnpm preview`：本地预览生产构建结果
+- `pnpm lint`：检查 ESLint 规范问题
+- `pnpm lint:fix`：自动修复可修复的 ESLint 问题
+- `pnpm generate`：生成静态站点产物（SSG）
 
 ## 目录结构（示例）
 

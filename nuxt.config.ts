@@ -23,8 +23,7 @@ export default defineNuxtConfig({
     "@ant-design-vue/nuxt",
     "dayjs-nuxt",
     "nuxt-viewport",
-    "@samk-dev/nuxt-vcalendar",
-    "nuxt-icon",
+    "@nuxt/icon",
   ],
   viewport: {
     /* Viewport options */
@@ -62,7 +61,7 @@ export default defineNuxtConfig({
         },
       },
       sizes: ()=>{
-        let sizes = {};
+        const sizes: Record<number, string> = {};
         for(let i = 16; i <= 100; i += 4){
           sizes[i] = `${i}px`;
         }
@@ -95,7 +94,7 @@ export default defineNuxtConfig({
         },
         keep_classnames: false, // 保持原始css类名
         sourceMap: false,
-      },
+      } as any,
     },
   },
   devServer: {
