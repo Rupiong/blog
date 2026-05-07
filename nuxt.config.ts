@@ -128,6 +128,10 @@ export default defineNuxtConfig({
       // 开发与生产均走同源 /basic-api，由 nitro.routeRules / devProxy 转发到 GLOB_API_URL，避免客户端导航时直连后端触发 CORS
       apiUrl: "/basic-api",
       siteTitle: process.env.NUXT_SITE_TITLE_SHORT,
+      /** Fingerprint 控制台 Public API Key，用于 @fingerprint/vue */
+      fingerprintPublicApiKey: process.env.NUXT_PUBLIC_FINGERPRINT_PUBLIC_API_KEY || "",
+      /** 可选：`us` | `eu` | `ap`，与控制台所选区域一致 */
+      fingerprintRegion: process.env.NUXT_PUBLIC_FINGERPRINT_REGION || "",
     },
   },
 

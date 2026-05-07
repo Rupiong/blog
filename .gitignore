@@ -3,3 +3,4 @@ node_modules
 .output
 .nuxt
 .pnpm-store
+article_output/nuxt4-go-pg-first-blog-juejin.md

@@ -11,6 +11,9 @@ importers:
       '@better-scroll/core':
         specifier: ^2.5.1
         version: 2.5.1
+      '@fingerprint/vue':
+        specifier: ^2.0.0
+        version: 2.0.0(vue@3.5.33(typescript@6.0.2))
       '@nuxtjs/dotenv':
         specifier: ^1.4.1
         version: 1.4.2
@@ -677,6 +680,14 @@ packages:
   '@eslint/js@8.57.1':
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@fingerprint/agent@4.0.3':
+    resolution: {integrity: sha512-hYAk8gPKgW3i1zkZm62wPp31ibGwHao0QXU5F7ydiQwxhxPhfd4IjPIPxDkuQJgH3GaBkYn7Hgkgrq38K9aJzw==}
+
+  '@fingerprint/vue@2.0.0':
+    resolution: {integrity: sha512-/uBHZ4+cRfDYpbjDakWJfnBN4mrh02tEG/qoClI+4giMQxvlV2ydqvvYaF0RuE9THY2G6FS6x0XY0lj3pKyi/A==}
+    peerDependencies:
+      vue: ^3.1
 
   '@floating-ui/core@1.7.5':
     resolution: {integrity: sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ==}
@@ -6030,6 +6041,14 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.1': {}
+
+  '@fingerprint/agent@4.0.3': {}
+
+  '@fingerprint/vue@2.0.0(vue@3.5.33(typescript@6.0.2))':
+    dependencies:
+      '@fingerprint/agent': 4.0.3
+      tslib: 2.8.1
+      vue: 3.5.33(typescript@6.0.2)
 
   '@floating-ui/core@1.7.5':
     dependencies:
