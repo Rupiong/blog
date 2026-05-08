@@ -4,7 +4,7 @@ module.exports = {
     {
       name: "small_blog",
       cwd: __dirname,
-      script: ".output/server/index.mjs",
+      script: "./server/index.mjs",
       interpreter: "node",
       instances: 1,
       exec_mode: "fork",

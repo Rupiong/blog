@@ -55,6 +55,12 @@
   "keywords": [
     "nuxt.js"
   ],
-  "author": "robin zhu",
-  "license": "MIT"
+  "author": "Copyman",
+  "license": "MIT",
+  "pnpm": {
+    "supportedArchitectures": {
+      "os": ["darwin"],
+      "cpu": ["arm64", "x64"]
+    }
+  }
 }
